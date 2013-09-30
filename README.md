@@ -25,6 +25,7 @@ Go to the `phone` folder and install all node dependencies*:
 ```
 npm install -g yeoman
 npm install
+bower install
 ```
 
 Run the server for this with*:
@@ -46,3 +47,14 @@ Run the server for this with*:
 ``lcm server``
 
 >*You need maybe a terminal configuration when the commands are not found!
+
+Information and Tutorials
+-------------------------
+
+* Nice Git Introduction from [net.tutsplus](http://net.tutsplus.com/tutorials/other/easy-version-control-with-git/)
+
+* [Locomotive JS](http://locomotivejs.org/guide/) - Guide for backend development with JavaScript
+
+* [AngularJS](http://angularjs.org/) - Beginners guide for frontend development with JavaScript
+
+
