@@ -22,7 +22,10 @@ Clone the project to your local pc with the terminal*:
 
 Go to the `phone` folder and install all node dependencies*:
 
-``npm install``
+```
+npm install -g yeoman
+npm install
+```
 
 Run the server for this with*:
 
@@ -32,12 +35,14 @@ Run the server for this with*:
 
 Go to the `phone` folder and install all node dependencies*:
 
-``npm install``
+```
+npm install -g lcm
+npm install
+
+```
 
 Run the server for this with*:
 
 ``lcm server``
-
-
 
 >*You need maybe a terminal configuration when the commands are not found!
