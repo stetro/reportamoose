@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>JavaScript Workshop</title>
+	<link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+	<link rel="stylesheet" href="bower_components/reveal.js/css/theme/moon.css">
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			
+			<section>
+				<section>
+					<h1>JavaScript</h1>
+					<h3>1. Short Introduction and important differences</h3>
+				</section>
+				<section>
+					<h3>Script Language</h3>
+					<h3>Typeless</h3>
+					<code>var a = "Hallo";</code><br/>
+					<code>var b = 1120;</code><br/>
+					<code>var c = a + b;</code><br/>
+					<code>> c = "Hallo1120";</code>
+				</section>
+				<section>
+					<h3>Functional Programming Language</h3>
+					<code trim-data>
+						var a = function(){alert("clicked")};
+						element.onclick(a);
+					</code><br/>
+					<button onclick="alert('clicked')">Testbutton</button>
+				</section>
+				<section>
+					<h3>Direct Objects Representation</h3>
+					<code>
+						var p = {name:"Steffen" ,age:22, do:function(){}};
+						
+					</code>
+				</section>
+			</section>
+
+			<section>
+				<h1>Javascript</h1>
+				<h2>2. AngularJS</h2>
+			</section>
+
+
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/reveal.js/lib/js/head.min.js"></script>
+<script type="text/javascript" src="bower_components/reveal.js/js/reveal.min.js"></script>
+<script>
+	Reveal.initialize({
+		history: true,
+		dependencies: [
+			{ src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		]
+	});
+</script>
+</html>

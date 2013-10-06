@@ -1,0 +1,23 @@
+{
+  "name": "javascriptworkshop",
+  "version": "0.0.0",
+  "homepage": "https://github.com/stetro/reportamoose",
+  "authors": [
+    "Steffen Tröster <stetro.freaky@googlemail.com>"
+  ],
+  "description": "short introduction to javascript, angularjs and nodejs",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~2.5.0"
+  },
+  "directory":"./"
+}
