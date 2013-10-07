@@ -6,7 +6,8 @@ lib-cov
 *.out
 *.pid
 *.gz
-
+tmp
+demo
 *node_modules*
 *bower_components*
 pids
