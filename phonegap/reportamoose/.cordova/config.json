@@ -1,0 +1,11 @@
+{
+	"lib": {
+		"www": {
+			"id": "reportamoose",
+			"version": "0.0.1",
+			"uri": "https://github.com/stetro/reportamoose"
+		}
+	},
+	"id": "com.reportamoose",
+	"name": "Report a Moose"
+}
