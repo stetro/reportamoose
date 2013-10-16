@@ -17,6 +17,6 @@ results
 npm-debug.log
 
 
-phonegap/reportamoose/platforms/
+phonegap/reportamoose/platforms/*
 phonegap/reportamoose/pugins/
 phonegap/reportamoose/www/
