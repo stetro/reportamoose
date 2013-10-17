@@ -1,12 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="phoneApp"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="phoneApp"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="phoneApp"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" ng-app="phoneApp"> <!--<![endif]-->
+<html class="no-js" ng-app="phoneApp"> <!--<![endif]-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=3, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>report a moose</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -15,27 +12,23 @@
         <!-- endbuild -->
 
         <link rel="stylesheet" href="bower_components/topcoat/css/topcoat-mobile-light.min.css">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css">
 </head>
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view="">
     </div>
-
+    
     <script type="text/javascript" src="phonegap.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-leaflet-directive/test/lib/leaflet.js"></script>
+    <script type="text/javascript" src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/Main.js"></script>
+    <script src="scripts/controllers/Map.js"></script>
     <!-- endbuild -->
 </body>
 </html>
