@@ -15,7 +15,7 @@ var mountFolder = function (connect, dir) {
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
-
+  grunt.option('force', true);
   // configurable paths
   var yeomanConfig = {
     app: 'app',
@@ -251,6 +251,7 @@ module.exports = function (grunt) {
             'images/{,*/}*.{gif,webp}',
             'styles/fonts/*',
             'config.xml',
+            'icon.png'
           ]
         }, {
           expand: true,
