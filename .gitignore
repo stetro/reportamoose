@@ -19,5 +19,5 @@ npm-debug.log
 
 phonegap/reportamoose/platforms/*
 !phonegap/reportamoose/platforms/android/AndroidManifest.xml
-phonegap/reportamoose/pugins/
+phonegap/reportamoose/pugins/*
 phonegap/reportamoose/www/

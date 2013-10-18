@@ -33,6 +33,10 @@ phoneApp.config(function($routeProvider, $compileProvider) {
 			templateUrl: 'views/position.html',
 			controller: 'PositionCtrl'
 		})
+		.when('/picture', {
+			templateUrl: 'views/picture.html',
+			controller: 'PictureCtrl'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
