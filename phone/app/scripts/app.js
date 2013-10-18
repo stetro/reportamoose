@@ -29,6 +29,10 @@ phoneApp.config(function($routeProvider, $compileProvider) {
 			templateUrl: 'views/map.html',
 			controller: 'MapCtrl'
 		})
+		.when('/position', {
+			templateUrl: 'views/position.html',
+			controller: 'PositionCtrl'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
