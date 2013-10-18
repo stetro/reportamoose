@@ -48,6 +48,14 @@ Run the server for this with*:
 
 >*You need maybe a terminal configuration when the commands are not found!
 
+### Deploying on different devices
+
+For deploying you need the phonegap application and the specific build environment installed. Go to the `phonegap/reportamoose` folder and run your specific system:
+```
+npm install -g phonegap
+phonegap run android		# or ios, blackbarry ...
+```
+
 Information and Tutorials
 -------------------------
 
