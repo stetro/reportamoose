@@ -1,6 +1,15 @@
+<div class="topcoat-navigation-bar">
+	<div class="topcoat-navigation-bar__item left quarter">
+		<button class="topcoat-button" ng-click="back()">&lt;</button>
+	</div>
+	<div class="topcoat-navigation-bar__item center">
+		<h1 class="topcoat-navigation-bar__title">Camera Service</h1>
+	</div>
+</div>
 <section id="mainsection">
-	<h1>Camera Service</h1>
-	<button class="topcoat-button--cta" ng-click="takePicture()">Take a Picture</button>
-	<img src="{{picture}}" alt="" width="100" height="100" id="takenPicture">
+	<div class="overmap">
+		<button class="topcoat-button--cta" ng-click="takePicture()">Take a Picture</button>
+	</div>
+	<img src="{{picture}}" alt="" id="takenPicture">
 	
 </section>

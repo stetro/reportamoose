@@ -1,24 +1,24 @@
 'use strict';
 
-angular.module('phoneApp')
-	.controller('PositionCtrl', function($scope) {
-		$scope.center = {
-			lat: 61.4981508,
-			lng: 23.7610254,
-			zoom: 13
-		};
+angular.module('phoneApp').controller('PositionCtrl', function($scope, $window) {
+	$scope.center = {
+		lat: 61.4981508,
+		lng: 23.7610254,
+		zoom: 13
+	};
 
-		angular.extend($scope, {
-			defaults: {
-				scrollWheelZoom: false
-			},
-			markers: {}
-		});
+	angular.extend($scope, {
+		defaults: {
+			scrollWheelZoom: false
+		},
+		markers: {}
+	});
 
-		$scope.findCurrentLocation = function() {
-			console.log('REPORT - Location Searching ...');
-			navigator.geolocation.getCurrentPosition(function(pos) {
-				console.log("REPORT - Location Searching - DONE");
+	$scope.findCurrentLocation = function() {
+		console.log('REPORT - Location Searching ...');
+		navigator.geolocation.getCurrentPosition(function(pos) {
+			console.log("REPORT - Location Searching - DONE");
+			$scope.$apply(function() {
 				var crd = pos.coords;
 				$scope.markers = {
 					yourPosition: {
@@ -31,8 +31,13 @@ angular.module('phoneApp')
 				};
 				$scope.center.lat = crd.latitude;
 				$scope.center.lng = crd.longitude;
-			}, function(err) {
-				console.log("REPORT - ERROR FINDING LOCATION");
 			});
-		};
-	});
+
+		}, function(err) {
+			console.log("REPORT - ERROR FINDING LOCATION");
+		});
+	};
+	$scope.back = function() {
+		$window.history.back();
+	};
+});

@@ -1,6 +1,16 @@
+<div class="topcoat-navigation-bar">
+	<div class="topcoat-navigation-bar__item left quarter">
+		<button class="topcoat-button" ng-click="back()">&lt;</button>
+	</div>
+	<div class="topcoat-navigation-bar__item center">
+		<h1 class="topcoat-navigation-bar__title">Simple Map View</h1>
+	</div>
+</div>
+
 <section id="mainsection">
-	<h1>Simple Map View</h1>
-	<button class="topcoat-button--cta">Report</button>
-	<button class="topcoat-button--cta">Call</button>
+	<div class="overmap">
+		<button class="topcoat-button--cta">Report</button>
+		<button class="topcoat-button">Call</button>
+	</div>
 	<leaflet center="center"></leaflet>
 </section>
