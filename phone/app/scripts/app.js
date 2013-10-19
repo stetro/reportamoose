@@ -45,6 +45,10 @@ phoneApp.config(function($routeProvider, $compileProvider) {
 			templateUrl: 'views/report.html',
 			controller: 'ReportCtrl'
 		})
+		.when('/detail', {
+			templateUrl: 'views/detail.html',
+			controller: 'DetailCtrl'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});

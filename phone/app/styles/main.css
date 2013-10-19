@@ -13,6 +13,9 @@ body.dark {
 	height: 100%;
 	z-index: 0;
 }
+input.topcoat-text-input{
+	width: 100%;
+}
 #app .leaflet-container{
 	top: 0;
 }
