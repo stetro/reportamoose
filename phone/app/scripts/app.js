@@ -21,7 +21,7 @@ var phoneApp = angular.module('phoneApp', ["leaflet-directive"]);
 
 phoneApp.config(function($routeProvider, $compileProvider) {
 	$routeProvider
-		.when('/', {
+		.when('/app', {
 			templateUrl: 'views/main.html',
 			controller: 'MainCtrl'
 		})
@@ -36,6 +36,14 @@ phoneApp.config(function($routeProvider, $compileProvider) {
 		.when('/picture', {
 			templateUrl: 'views/picture.html',
 			controller: 'PictureCtrl'
+		})
+		.when('/', {
+			templateUrl: 'views/app.html',
+			controller: 'AppCtrl'
+		})
+		.when('/report', {
+			templateUrl: 'views/report.html',
+			controller: 'ReportCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'

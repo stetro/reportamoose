@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('phoneApp').controller('MapCtrl', function($scope,$window) {
+angular.module('phoneApp').controller('MapCtrl', function($scope, $window) {
 	$scope.center = {
 		lat: 61.4981508,
 		lng: 23.7610254,
-		zoom: 13
+		zoom: 13,
+		maxZoom: 16,
 	};
 	angular.extend($scope, {
 		defaults: {

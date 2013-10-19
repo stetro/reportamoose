@@ -1,0 +1,50 @@
+<div id="app">
+	<div class="overmap">
+		<button class="topcoat-button--cta" id="report-button" ng-click="report()">
+			<i class="icon-warning-sign"></i>
+			Report
+		</button>
+		<button class="topcoat-button">
+			<i class="icon-phone"></i>
+			Call 
+		</button>
+	</div>
+	<div class="undermap">
+		<div class="topcoat-button-bar">
+			<div class="topcoat-button-bar__item">
+				<button class="topcoat-button-bar__button" ng-click="findCurrentLocation()">
+					<i class="icon-location-arrow"></i>
+				</button>
+			</div>
+			<div class="topcoat-button-bar__item">
+				<button class="topcoat-button-bar__button">Locationstore</button>
+			</div>
+			<div class="topcoat-button-bar__item">
+				<button class="topcoat-button-bar__button">Settings</button>
+			</div>
+		</div>
+		
+	</div>
+	<leaflet center="center" markers="markers" defaults="defaults" control="control"></leaflet>	
+</div>
+<div id="overall" ng-show="reportChoice">
+	<div class="topcoat-list">
+		<h3 class="topcoat-list__header">Report <div ng-click="close()" class="right">x</div></h3>
+		<ul class="topcoat-list__container">
+			<li class="topcoat-list__item">
+				<button class="topcoat-button--cta" ng-click="reportNow()">
+					<i class="icon-warning-sign"></i>
+					NOW
+				</button>
+			</li>
+			<li class="topcoat-list__item">
+				<button class="topcoat-button" ng-click="reportLater()">
+					<i class="icon-time"></i>
+					Later (save position)
+				</button>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+

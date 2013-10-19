@@ -13,6 +13,9 @@ body.dark {
 	height: 100%;
 	z-index: 0;
 }
+#app .leaflet-container{
+	top: 0;
+}
 li > button{
 	width: 100%;
 }
@@ -21,9 +24,22 @@ li > button{
 }
 div.overmap{
 	margin-left: 60px;
+
 }
 div.overmap > button{
 	z-index: 100;
+	margin-top: 10px;
+}
+div.undermap{
+	position: absolute;
+	bottom: 15px;
+	left:10px;
+}
+div.undermap  button{
+	z-index: 100;
+}
+#report-button{
+	width: 60%;
 }
 .leaflet-popup-content{
 	color:#000000;
@@ -33,7 +49,30 @@ div.overmap > button{
 	margin-top: 20px;
 	background-color: #CCC;
 }
-a{
+.dark a{
 	color:#F0F1F1;
 	text-decoration: none;
+}
+#prototype-button{
+	width: 100%;
+}
+.light a{
+	color:#222222;
+	text-decoration: none;
+}
+
+#overall{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(30,30,30,0.7);
+	z-index: 1000;
+}
+#overall>div{
+	margin-top: 100px;
+}
+#overall div.right{
+	float: right;
 }
