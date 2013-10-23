@@ -1,0 +1,28 @@
+<div class="topcoat-navigation-bar">
+	<div class="topcoat-navigation-bar__item left quarter">
+		<button class="topcoat-button" ng-click="back()"><i class="icon-chevron-sign-left"></i></button>
+	</div>
+	<div class="topcoat-navigation-bar__item center">
+		<h1 class="topcoat-navigation-bar__title">Locationstore</h1>
+	</div>
+</div>
+<section id="mainsection" class="component">
+	<ul class="topcoat-list__container">
+		<li class="topcoat-list__item" ng-repeat="location in locations">
+			<label class="topcoat-checkbox">
+				<input type="checkbox" name="topcoat" ng-model="location.checked">
+				<div class="topcoat-checkbox__checkmark"></div>
+				Location {{($index+1)+' - '+location.name}}
+			</label>
+		</li>
+	</ul>
+	<hr>
+	<button class="topcoat-button--cta" ng-click="report()">
+		<i class="icon-warning-sign"></i>
+		Report
+	</button>
+	<button class="topcoat-button" ng-click="delete()">
+		<i class="icon-remove"></i>
+		Delete
+	</button>
+</section>

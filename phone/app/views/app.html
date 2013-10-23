@@ -4,7 +4,7 @@
 			<i class="icon-warning-sign"></i>
 			Report
 		</button>
-		<button class="topcoat-button">
+		<button class="topcoat-button" ng-click="call()">
 			<i class="icon-phone"></i>
 			Call 
 		</button>
@@ -17,10 +17,10 @@
 				</button>
 			</div>
 			<div class="topcoat-button-bar__item">
-				<button class="topcoat-button-bar__button">Locationstore</button>
+				<button class="topcoat-button-bar__button" ng-click="store()">Locationstore</button>
 			</div>
 			<div class="topcoat-button-bar__item">
-				<button class="topcoat-button-bar__button">Settings</button>
+				<button class="topcoat-button-bar__button" ng-click="settings()">Settings</button>
 			</div>
 		</div>
 		
@@ -38,7 +38,7 @@
 				</button>
 			</li>
 			<li class="topcoat-list__item">
-				<button class="topcoat-button" ng-click="reportLater()">
+				<button class="topcoat-button" ng-click="later()">
 					<i class="icon-time"></i>
 					Later (save position)
 				</button>

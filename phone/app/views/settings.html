@@ -1,0 +1,20 @@
+<div class="topcoat-navigation-bar">
+	<div class="topcoat-navigation-bar__item left quarter">
+		<button class="topcoat-button" ng-click="back()"><i class="icon-chevron-sign-left"></i></button>
+	</div>
+	<div class="topcoat-navigation-bar__item center">
+		<h1 class="topcoat-navigation-bar__title">Settings</h1>
+	</div>
+</div>
+<section id="mainsection" class="component">
+	<input type="text" class="topcoat-text-input" placeholder="Name ..." ng-model="settings.name">
+	<br><br>
+	<input type="text" class="topcoat-text-input" placeholder="Mail ..." ng-model="settings.mail">
+	<br><br>
+	<input type="text" class="topcoat-text-input" placeholder="Location ..." ng-model="settings.city">
+	<br><br>
+	<button class="topcoat-button--cta" ng-click="save()">
+		<i class="icon-save"></i>
+		Save
+	</button>
+</section>
