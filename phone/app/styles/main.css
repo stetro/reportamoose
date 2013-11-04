@@ -5,19 +5,19 @@ body.dark {
 #mainsection{
     margin: 10px;
 }
-.leaflet-container{
+#app .leaflet-container{
 	position: absolute;
-	top:70px;
+	bottom: 100px;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	top: 0;
 	z-index: 0;
 }
-input.topcoat-text-input{
-	width: 100%;
+#app.open .leaflet-container{
+	top: 216px;
 }
-#app .leaflet-container{
-	top: 0;
+input.topcoat-text-input, input.topcoat-search-input{
+	width: 100%;
 }
 li > button{
 	width: 100%;
@@ -27,19 +27,44 @@ li > button{
 }
 div.overmap{
 	margin-left: 60px;
-
-}
-div.overmap > button{
 	z-index: 100;
-	margin-top: 10px;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+div.overmap i{
+	color: #000;
+	font-size: 2em;
+}
+div.overmap i:hover{
+	cursor: pointer;
 }
 div.undermap{
-	position: absolute;
-	bottom: 15px;
-	left:10px;
-}
-div.undermap  button{
+	width: 100%;
 	z-index: 100;
+	position: absolute;	
+	bottom: 0;
+}
+
+div.undermap .topcoat-navigation-bar{
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	overflow: scroll;
+}
+div.undermap ul{
+	margin: 0;
+	padding: 0;
+	width: 800px;
+
+}
+div.undermap ul > li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	font-size: 5em;
+	padding-left: 30px;
 }
 #report-button{
 	width: 60%;

@@ -1,50 +1,32 @@
-<div id="app">
+<div id="menu" ng-class="{'open': menuOpen}">
+	<ul class="topcoat-list__container">
+		<li class="topcoat-list__item">
+			Settings
+		</li>
+		<li class="topcoat-list__item">
+			Drafts
+		</li>
+		<li class="topcoat-list__item">
+			<input type="text" placeholder=" Address ..." class="topcoat-search-input">
+		</li>
+	</ul>
+</div>
+<div id="app" ng-class="{'open': menuOpen}">
 	<div class="overmap">
-		<button class="topcoat-button--cta" id="report-button" ng-click="report()">
-			<i class="icon-warning-sign"></i>
-			Report
-		</button>
-		<button class="topcoat-button" ng-click="call()">
-			<i class="icon-phone"></i>
-			Call 
-		</button>
+		<i class="icon-reorder" ng-click="toggleMenu()"></i>
 	</div>
-	<div class="undermap">
-		<div class="topcoat-button-bar">
-			<div class="topcoat-button-bar__item">
-				<button class="topcoat-button-bar__button" ng-click="findCurrentLocation()">
-					<i class="icon-location-arrow"></i>
-				</button>
-			</div>
-			<div class="topcoat-button-bar__item">
-				<button class="topcoat-button-bar__button" ng-click="store()">Locationstore</button>
-			</div>
-			<div class="topcoat-button-bar__item">
-				<button class="topcoat-button-bar__button" ng-click="settings()">Settings</button>
-			</div>
+	<div class="undermap"> 
+		<div class="topcoat-navigation-bar">
+			<ul>
+				<li ng-repeat="marker in issueMarkers">
+					<img src="{{marker.icon}}" alt="" ng-click="setIssue(marker)" width="40">
+				</li>
+			</ul>
 		</div>
-		
 	</div>
 	<leaflet center="center" markers="markers" defaults="defaults" control="control"></leaflet>	
 </div>
-<div id="overall" ng-show="reportChoice">
-	<div class="topcoat-list">
-		<h3 class="topcoat-list__header">Report <div ng-click="close()" class="right">x</div></h3>
-		<ul class="topcoat-list__container">
-			<li class="topcoat-list__item">
-				<button class="topcoat-button--cta" ng-click="reportNow()">
-					<i class="icon-warning-sign"></i>
-					NOW
-				</button>
-			</li>
-			<li class="topcoat-list__item">
-				<button class="topcoat-button" ng-click="later()">
-					<i class="icon-time"></i>
-					Later (save position)
-				</button>
-			</li>
-			
-		</ul>
-	</div>
+<div id="overall" ng-show="thanksMessage">
+	Thanks for reporting ...
 </div>
 

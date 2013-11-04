@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $location, $rootScope, cordovaReady) {
+angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $location, cordovaReady) {
 	/*LEAFLET MAP SETTINGS*/
 	angular.extend($scope, {
 		defaults: {
@@ -12,29 +12,33 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $loca
 			lng: 23.7610254,
 			zoom: 13
 		},
+		menuOpen: false,
 		markers: {},
-		reportChoice: false
+		thanksMessage: false,
+		issueMarkers: [{
+			name: 'animal-issue',
+			descr: 'Ded or alive moose',
+			icon: '/images/marker.png'
+		}, {
+			name: 'road-issue',
+			descr: 'Problems with the road',
+			icon: '/images/marker.png'
+		}, {
+			name: 'winter-issue',
+			descr: 'Winter care ...',
+			icon: '/images/marker2.png'
+		}, {
+			name: 'winter-issue',
+			descr: 'Winter care ...',
+			icon: '/images/marker2.png'
+		}, {
+			name: 'winter-issue',
+			descr: 'Winter care ...',
+			icon: '/images/marker2.png'
+		}]
 	});
 
-	$scope.$on('leafletDirectiveMap.click', function(e) {
-		console.log(e);
-	});
-
-	$scope.call = function() {
-		window.location.href = 'tel:0404458889';
-	};
-
-	$scope.later = function() {
-		var now = new Date();
-		$rootScope.locations.push({
-			name: now.getDate() + '.' + (now.getMonth() + 1) + '.' + now.getFullYear(),
-			time: now.toUTCString(),
-			checked: false
-		});
-		$scope.reportChoice = false;
-	};
-
-	$scope.findCurrentLocation = cordovaReady(function() {
+	$scope.findCurrentLocation = (function() {
 		console.log('REPORT - Location Searching ...');
 		navigator.geolocation.getCurrentPosition(function(pos) {
 			console.log("REPORT - Location Searching - DONE");
@@ -45,8 +49,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $loca
 						lat: crd.latitude,
 						lng: crd.longitude,
 						focus: true,
-						draggable: true,
-						message: "<strong><i class=\"icon-warning-sign\"></i> Report Position</strong><br/>(drag it to the right position)"
+						draggable: true
 					}
 				};
 				$scope.center = {
@@ -63,20 +66,23 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $loca
 
 	$scope.findCurrentLocation();
 
-	$scope.report = function() {
-		$scope.reportChoice = true;
+	$scope.toggleMenu = function() {
+		$scope.menuOpen = !$scope.menuOpen;
 	};
-	$scope.close = function() {
-		$scope.reportChoice = false;
+
+	$scope.setIssue = function(marker) {
+		$scope.markers.position.name = marker.name;
+		$scope.markers.position.icon = L.icon({
+			iconUrl: marker.icon,
+			iconSize: [25, 41]
+		});
+		$scope.markers.position.message = marker.descr;
 	};
+
 	$scope.reportNow = function() {
 		$location.path('/report');
 	};
 	$scope.settings = function() {
 		$location.path('/settings');
 	};
-	$scope.store = function() {
-		$location.path('/store');
-	};
-
 });
