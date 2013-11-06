@@ -15,8 +15,8 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 		markers: {
 			position: $rootScope.position
 		}
-
 	});
+	$scope.markers.position.focus = false;
 
 	$scope.back = function() {
 		$window.history.back();

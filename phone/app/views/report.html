@@ -10,29 +10,36 @@
 <section id="report" class="component">
 	<leaflet center="center" markers="markers" defaults="defaults"></leaflet>	
 
-	<div id="reportCategory">
-		<img src="{{position.iconUrl}}" alt="">
-		<select class="topcoat-button">
-			<option value="" ng-repeat="cat in position.subcat">{{cat}}</option>
-		</select>
-		
-	</div>
-
-	<input type="text" class="topcoat-text-input" placeholder="Description ..." value=""> <br><br>
-	<div class="picture">
-		<button class="picture topcoat-button" ng-click="takePicture()">
-			<i class="icon-picture"></i>
-			Take a Photo
+	<div class="wrapper">
+		<div id="reportCategory">
+			<img src="{{position.iconUrl}}" alt="">
+			<select class="topcoat-button">
+				<option value="">specify ...</option>
+				<option value="" ng-repeat="cat in position.subcat">{{cat}}</option>
+			</select>
+			
+		</div>
+	
+		<input type="text" class="topcoat-text-input" placeholder="Description ..." value=""> <br><br>
+		<div class="picture">
+			<button class="picture topcoat-button" ng-click="takePicture()">
+				<i class="icon-picture"></i>
+				Photo
+			</button>
+			<!-- <img src="{{picture}}" alt="Take a Picture" id="takenPicture"> -->
+		</div><br>
+		<label class="topcoat-checkbox">
+			<input type="checkbox">
+			<div class="topcoat-checkbox__checkmark"></div>
+			&nbsp;Get Feedback about Report
+		</label><br><br>
+		<button class="topcoat-button--cta" ng-click="send()" id="sendReportButton">
+			<i class="icon-share"></i>
+			Report Now
 		</button>
-		<img src="{{picture}}" alt="Take a Picture" id="takenPicture">
-	</div><br>
-	<label class="topcoat-checkbox">
-		<input type="checkbox">
-		<div class="topcoat-checkbox__checkmark"></div>
-		&nbsp;Get Feedback from Report
-	</label><br><br>
-	<button class="topcoat-button--cta" ng-click="send()">
-		<i class="icon-share"></i>
-		Report Now
-	</button>
+		<button class="topcoat-button" ng-click="sava()" id="saveReportButton">
+			<i class="icon-draft"></i>
+			Save Draft
+		</button>
+	</div>
 </section>
