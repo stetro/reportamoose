@@ -11,12 +11,16 @@
 		</li>
 	</ul>
 </div>
+
 <div id="app" ng-class="{'open': menuOpen}">
-	<div class="overmap">
-		<i class="icon-reorder" ng-click="toggleMenu()"></i>
-	</div>
 	<div class="undermap"> 
-		<div class="topcoat-navigation-bar">
+		<div id="reportButtonWrapper">
+			<button class="topcoat-button--cta" id="reportButton" ng-click="reportNow()" ng-show="showReportButton">
+				<i class="icon-warning-sign"></i>
+				Report
+			</button>
+		</div>
+		<div> 
 			<ul>
 				<li ng-repeat="marker in issueMarkers">
 					<img src="{{marker.icon}}" alt="" ng-click="setIssue(marker)" width="40">
@@ -24,9 +28,11 @@
 			</ul>
 		</div>
 	</div>
-	<leaflet center="center" markers="markers" defaults="defaults" control="control"></leaflet>	
+	<leaflet center="center" markers="markers" defaults="defaults" control="control" event-broadcast="events"></leaflet>	
 </div>
-<div id="overall" ng-show="thanksMessage">
-	Thanks for reporting ...
+<div id="overall" ng-class="{'open': menuOpen}"></div>
+
+<div class="overmap" ng-class="{'open':menuOpen}">
+	<i ng-class="{'icon-angle-up': menuOpen,'icon-reorder':!menuOpen}" ng-click="toggleMenu()" id=""></i>
 </div>
 

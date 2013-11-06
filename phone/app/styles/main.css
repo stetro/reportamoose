@@ -5,6 +5,9 @@ body.dark {
 #mainsection{
     margin: 10px;
 }
+#report .leaflet-container{
+	height: 200px;
+}
 #app .leaflet-container{
 	position: absolute;
 	bottom: 100px;
@@ -12,9 +15,31 @@ body.dark {
 	width: 100%;
 	top: 0;
 	z-index: 0;
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
 }
+
 #app.open .leaflet-container{
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
 	top: 216px;
+	bottom: 0;
 }
 input.topcoat-text-input, input.topcoat-search-input{
 	width: 100%;
@@ -25,12 +50,35 @@ li > button{
 .topcoat-navigation-bar__item > button{
 	margin-top: 10px;
 }
+.open div.overmap{
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	top: 226px;
+}
 div.overmap{
 	margin-left: 60px;
 	z-index: 100;
 	position: absolute;
 	right: 15px;
 	top: 10px;
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
 }
 div.overmap i{
 	color: #000;
@@ -43,11 +91,33 @@ div.undermap{
 	width: 100%;
 	z-index: 100;
 	position: absolute;	
-	bottom: 0;
+	bottom: 0px;
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
 }
-
-div.undermap .topcoat-navigation-bar{
-	height: 100px;
+.open div.undermap{
+	bottom: -100px;
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+div.undermap div.markers{
+	height: 70px;
 	padding: 0;
 	margin: 0;
 	overflow: scroll;
@@ -56,15 +126,13 @@ div.undermap ul{
 	margin: 0;
 	padding: 0;
 	width: 800px;
-
 }
 div.undermap ul > li{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	float: left;
-	font-size: 5em;
-	padding-left: 30px;
+	padding-left: 20px;
 }
 #report-button{
 	width: 60%;
@@ -87,6 +155,38 @@ div.undermap ul > li{
 .light a{
 	color:#222222;
 	text-decoration: none;
+}
+button#reportButton{
+	margin: 0 auto;
+	bottom: 10px;
+	width: 100%;
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+.open button#reportButton{
+	-webkit-transition-property: top, bottom;
+	-moz-transition-property: top, bottom;
+	-o-transition-property: top, bottom;
+	-ms-transition-property: top, bottom;
+	transition-property: top, bottom;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	bottom: -70px;
+}
+div#reportButtonWrapper{
+	margin: 10px;
+	position: relative;
 }
 
 #overall{

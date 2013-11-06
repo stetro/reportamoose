@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $location, cordovaReady) {
+angular.module('phoneApp').controller('AppCtrl', function($scope, $rootScope, $window, $location, cordovaReady) {
 	/*LEAFLET MAP SETTINGS*/
 	angular.extend($scope, {
 		defaults: {
@@ -12,31 +12,44 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $loca
 			lng: 23.7610254,
 			zoom: 13
 		},
+		events: {
+			map: {
+				enable: ['geojsonClick'],
+				logic: 'emit'
+			}
+		},
 		menuOpen: false,
 		markers: {},
 		thanksMessage: false,
-		issueMarkers: [{
-			name: 'animal-issue',
-			descr: 'Ded or alive moose',
-			icon: '/images/marker.png'
-		}, {
-			name: 'road-issue',
-			descr: 'Problems with the road',
-			icon: '/images/marker.png'
-		}, {
-			name: 'winter-issue',
-			descr: 'Winter care ...',
-			icon: '/images/marker2.png'
-		}, {
-			name: 'winter-issue',
-			descr: 'Winter care ...',
-			icon: '/images/marker2.png'
-		}, {
-			name: 'winter-issue',
-			descr: 'Winter care ...',
-			icon: '/images/marker2.png'
-		}]
+		showReportButton:false
 	});
+
+	$rootScope.issueMarkers =[{
+		name: 'animal-issue',
+		descr: 'Ded or alive moose',
+		icon: '/images/marker_moose.png',
+		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
+	}, {
+		name: 'road-issue',
+		descr: 'Problems with the road',
+		icon: '/images/marker_road.png',
+		subcat: ['Asphalt', 'Pothile']
+	}, {
+		name: 'winter-issue',
+		descr: 'Winter care ...',
+		icon: '/images/marker_snow.png',
+		subcat: ['Snow', 'Ice', 'Snowman', 'Snowboarder']
+	}, {
+		name: 'winter-issue',
+		descr: 'Trash somwhere',
+		icon: '/images/marker_trash.png',
+		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
+	}, {
+		name: 'winter-issue',
+		descr: 'Not working light',
+		icon: '/images/marker_light.png',
+		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
+	}];
 
 	$scope.findCurrentLocation = (function() {
 		console.log('REPORT - Location Searching ...');
@@ -71,15 +84,25 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $window, $loca
 	};
 
 	$scope.setIssue = function(marker) {
+		$scope.showReportButton = true;
 		$scope.markers.position.name = marker.name;
 		$scope.markers.position.icon = L.icon({
 			iconUrl: marker.icon,
-			iconSize: [25, 41]
+			iconSize: [35, 50],
+			iconAnchor: [16, 43],
+            popupAnchor: [2, -45]
 		});
+		$scope.markers.position.iconUrl = marker.icon;
 		$scope.markers.position.message = marker.descr;
+		$scope.markers.position.subcat = marker.subcat;
 	};
 
+	$scope.$on('leafletDirectiveMap.geojsonClick', function(event) {
+		console.log(event);
+	});
+
 	$scope.reportNow = function() {
+		$rootScope.position = $scope.markers.position;
 		$location.path('/report');
 	};
 	$scope.settings = function() {
