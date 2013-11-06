@@ -7,7 +7,9 @@
 			Drafts
 		</li>
 		<li class="topcoat-list__item">
-			<input type="text" placeholder=" Address ..." class="topcoat-search-input">
+			<form ng-submit="lookUp(address)">
+				<input type="text" ng-model="address" placeholder=" Address ..." class="topcoat-search-input">
+			</form>
 		</li>
 	</ul>
 </div>

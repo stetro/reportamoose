@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('phoneApp').controller('AppCtrl', function($scope, $rootScope, $window, $location, cordovaReady) {
+angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootScope, $window, $location, cordovaReady) {
 	/*LEAFLET MAP SETTINGS*/
 	angular.extend($scope, {
 		defaults: {
@@ -14,17 +14,17 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $rootScope, $w
 		},
 		events: {
 			map: {
-				enable: ['geojsonClick'],
+				enable: ['click'],
 				logic: 'emit'
 			}
 		},
 		menuOpen: false,
 		markers: {},
 		thanksMessage: false,
-		showReportButton:false
+		showReportButton: false
 	});
 
-	$rootScope.issueMarkers =[{
+	$rootScope.issueMarkers = [{
 		name: 'animal-issue',
 		descr: 'Ded or alive moose',
 		icon: '/images/marker_moose.png',
@@ -90,16 +90,37 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $rootScope, $w
 			iconUrl: marker.icon,
 			iconSize: [35, 50],
 			iconAnchor: [16, 43],
-            popupAnchor: [2, -45]
+			popupAnchor: [2, -45]
 		});
 		$scope.markers.position.iconUrl = marker.icon;
 		$scope.markers.position.message = marker.descr;
 		$scope.markers.position.subcat = marker.subcat;
 	};
 
-	$scope.$on('leafletDirectiveMap.geojsonClick', function(event) {
-		console.log(event);
+	$scope.$on('leafletDirectiveMap.click', function(e, args) {
+		console.log(args.leafletEvent.latlng);
+		$scope.markers.position.lat = args.leafletEvent.latlng.lat;
+		$scope.markers.position.lng = args.leafletEvent.latlng.lng;
+		$scope.center.lat = args.leafletEvent.latlng.lat;
+		$scope.center.lng = args.leafletEvent.latlng.lng;
+		$scope.center.zoom = 15;
 	});
+
+	$scope.lookUp = function(address) {
+		console.log('fooo')
+		delete $http.defaults.headers.common['X-Requested-With'];
+		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=false&address=' + address).success(function(data) {
+			if (data.results.length > 0) {
+				$scope.address = '';
+				$scope.menuOpen = false;
+				$scope.markers.position.lat = data.results[0].geometry.location.lat;
+				$scope.markers.position.lng = data.results[0].geometry.location.lng;
+				$scope.center.lat = data.results[0].geometry.location.lat;
+				$scope.center.lng = data.results[0].geometry.location.lng;
+				$scope.center.zoom = 15;
+			}
+		});
+	};
 
 	$scope.reportNow = function() {
 		$rootScope.position = $scope.markers.position;
