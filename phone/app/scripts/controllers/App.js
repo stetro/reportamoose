@@ -98,7 +98,6 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 	};
 
 	$scope.$on('leafletDirectiveMap.click', function(e, args) {
-		console.log(args.leafletEvent.latlng);
 		$scope.markers.position.lat = args.leafletEvent.latlng.lat;
 		$scope.markers.position.lng = args.leafletEvent.latlng.lng;
 		$scope.center.lat = args.leafletEvent.latlng.lat;
@@ -107,7 +106,6 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 	});
 
 	$scope.lookUp = function(address) {
-		console.log('fooo')
 		delete $http.defaults.headers.common['X-Requested-With'];
 		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=false&address=' + address).success(function(data) {
 			if (data.results.length > 0) {
@@ -115,9 +113,11 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 				$scope.menuOpen = false;
 				$scope.markers.position.lat = data.results[0].geometry.location.lat;
 				$scope.markers.position.lng = data.results[0].geometry.location.lng;
-				$scope.center.lat = data.results[0].geometry.location.lat;
-				$scope.center.lng = data.results[0].geometry.location.lng;
-				$scope.center.zoom = 15;
+				$scope.center = {
+					lat: data.results[0].geometry.location.lat,
+					lng: data.results[0].geometry.location.lng,
+					zoom: 15
+				}
 			}
 		});
 	};

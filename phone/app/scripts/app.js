@@ -21,7 +21,7 @@ var app = {
 
 app.initialize();
 
-var phoneApp = angular.module('phoneApp', ["leaflet-directive"]);
+var phoneApp = angular.module('phoneApp', ["leaflet-directive","ngDragDrop"]);
 
 phoneApp.run(function($rootScope) {
 	$rootScope.locations = [];

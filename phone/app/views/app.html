@@ -16,15 +16,18 @@
 
 <div id="app" ng-class="{'open': menuOpen}">
 	<div class="undermap"> 
-		<div id="reportButtonWrapper">
+		<div id="reportButtonWrapper" >
 			<button class="topcoat-button--cta" id="reportButton" ng-click="reportNow()" ng-show="showReportButton">
 				<i class="icon-warning-sign"></i>
 				Report
 			</button>
 		</div>
-		<div> 
+		<div>
+			<div id="markerHider" ng-hide="markers.position.focus">
+				Searching Location ...
+			</div>
 			<ul>
-				<li ng-repeat="marker in issueMarkers">
+				<li ng-repeat="marker in issueMarkers"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true}">
 					<img src="{{marker.icon}}" alt="" ng-click="setIssue(marker)" width="40">
 				</li>
 			</ul>
@@ -34,7 +37,7 @@
 </div>
 <div id="overall" ng-class="{'open': menuOpen}"></div>
 
-<div class="overmap" ng-class="{'open':menuOpen}">
+<div class="overmap" ng-class="{'open':menuOpen}" >
 	<i ng-class="{'icon-angle-up': menuOpen,'icon-reorder':!menuOpen}" ng-click="toggleMenu()" id=""></i>
 </div>
 
