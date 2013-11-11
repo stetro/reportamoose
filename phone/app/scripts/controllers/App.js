@@ -40,15 +40,15 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		icon: '/images/marker_snow.png',
 		subcat: ['Snow', 'Ice', 'Snowman', 'Snowboarder']
 	}, {
-		name: 'winter-issue',
+		name: 'tash-issue',
 		descr: 'Trash somwhere',
 		icon: '/images/marker_trash.png',
-		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
+		subcat: ['Cans', 'Leafs', 'Dirt', '...']
 	}, {
-		name: 'winter-issue',
+		name: 'light-issue',
 		descr: 'Not working light',
 		icon: '/images/marker_light.png',
-		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
+		subcat: ['Trafficlight', 'Streetlight', '...']
 	}];
 
 	$scope.findCurrentLocation = (function() {
