@@ -10,7 +10,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		center: {
 			lat: 61.4981508,
 			lng: 23.7610254,
-			zoom: 13
+			zoom: 15
 		},
 		events: {
 			map: {
@@ -24,47 +24,19 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		showReportButton: false
 	});
 
-	$rootScope.issueMarkers = [{
-		name: 'animal-issue',
-		descr: 'Ded or alive moose',
-		icon: '/images/marker_moose.png',
-		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
-	}, {
-		name: 'road-issue',
-		descr: 'Problems with the road',
-		icon: '/images/marker_road.png',
-		subcat: ['Asphalt', 'Pothile']
-	}, {
-		name: 'winter-issue',
-		descr: 'Winter care ...',
-		icon: '/images/marker_snow.png',
-		subcat: ['Snow', 'Ice', 'Snowman', 'Snowboarder']
-	}, {
-		name: 'tash-issue',
-		descr: 'Trash somwhere',
-		icon: '/images/marker_trash.png',
-		subcat: ['Cans', 'Leafs', 'Dirt', '...']
-	}, {
-		name: 'light-issue',
-		descr: 'Not working light',
-		icon: '/images/marker_light.png',
-		subcat: ['Trafficlight', 'Streetlight', '...']
-	}];
-
 	$scope.findCurrentLocation = (function() {
 		console.log('REPORT - Location Searching ...');
 		navigator.geolocation.getCurrentPosition(function(pos) {
 			console.log("REPORT - Location Searching - DONE");
 			$scope.$apply(function() {
 				var crd = pos.coords;
-				$scope.markers = {
-					position: {
-						lat: crd.latitude,
-						lng: crd.longitude,
-						focus: true,
-						draggable: true
-					}
+				$scope.markers.position = {
+					lat: crd.latitude,
+					lng: crd.longitude,
+					focus: true,
+					draggable: true
 				};
+
 				$scope.center = {
 					lat: crd.latitude,
 					lng: crd.longitude,
@@ -78,6 +50,25 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 	});
 
 	$scope.findCurrentLocation();
+
+	$scope.addTemporaryImportantMarker = function() {
+		for (var i = $rootScope.tempmarkers.length - 1; i >= 0; i--) {
+			$scope.markers[i + "marker"] = {
+				lat: $rootScope.tempmarkers[i].lat,
+				lng: $rootScope.tempmarkers[i].lng,
+				focus: false,
+				draggable: false,
+				icon: L.icon({
+					iconUrl: $rootScope.tempmarkers[i].icon,
+					iconSize: [33, 32],
+					iconAnchor: [16, 43],
+					popupAnchor: [2, -45]
+				})
+			};
+		};
+	};
+
+	$scope.addTemporaryImportantMarker();
 
 	$scope.toggleMenu = function() {
 		$scope.menuOpen = !$scope.menuOpen;

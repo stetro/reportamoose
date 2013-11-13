@@ -14,7 +14,7 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 		center: {
 			lat: $rootScope.position.lat,
 			lng: $rootScope.position.lng,
-			zoom: 13
+			zoom: 15
 		},
 		markers: {
 			position: $rootScope.position
@@ -32,7 +32,11 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 		console.log('Fooo');
 	};
 	$scope.send = function() {
-		$scope.showThankMessage = true;
+		$rootScope.showThankMessage = true;
+		$rootScope.position.icon = 'images/elk.png';
+		$rootScope.position.message = "";
+		$rootScope.position.focus = false;
+		$rootScope.tempmarkers.push($rootScope.position);
 		$location.path('/');
 	}
 });

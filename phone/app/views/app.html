@@ -14,6 +14,8 @@
 	</ul>
 </div>
 
+
+
 <div id="app" ng-class="{'open': menuOpen}">
 	<div class="undermap"> 
 		<div id="reportButtonWrapper" >
@@ -39,5 +41,10 @@
 
 <div class="overmap" ng-class="{'open':menuOpen}" >
 	<i ng-class="{'icon-angle-up': menuOpen,'icon-reorder':!menuOpen}" ng-click="toggleMenu()" id=""></i>
+</div>
+
+<div id="thanksmessage" ng-show="showThankMessage">
+	<p>Your issue has been reported.<br/>Thank you!</p>
+	<button class="topcoat-button--cta" ng-click="showThankMessage = false">OK</button>
 </div>
 

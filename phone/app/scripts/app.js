@@ -21,16 +21,60 @@ var app = {
 
 app.initialize();
 
-var phoneApp = angular.module('phoneApp', ["leaflet-directive","ngDragDrop"]);
+var phoneApp = angular.module('phoneApp', ["leaflet-directive", "ngDragDrop"]);
 
 phoneApp.run(function($rootScope) {
 	$rootScope.locations = [];
 	$rootScope.report = {};
+	$rootScope.showThankMessage = false;
 	$rootScope.settings = {
 		name: "",
 		mail: "",
 		city: ""
 	};
+	$rootScope.tempmarkers = [{
+		lat: 61.497414,
+		lng: 23.771583,
+		icon: 'images/warning.png'
+	}, {
+		lat: 61.497618,
+		lng: 23.751498,
+		icon: 'images/warning.png'
+	}, {
+		lat: 61.502410,
+		lng: 23.742572,
+		icon: 'images/warning.png'
+	}, {
+		lat: 61.505645,
+		lng: 23.770038,
+		icon: 'images/warning.png'
+	}];
+	$rootScope.issueMarkers = [{
+		name: 'animal-issue',
+		descr: 'Dead or alive moose',
+		icon: '/images/marker_moose.png',
+		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
+	}, {
+		name: 'road-issue',
+		descr: 'Problems with the road',
+		icon: '/images/marker_road.png',
+		subcat: ['Asphalt', 'Pothole']
+	}, {
+		name: 'winter-issue',
+		descr: 'Winter care ...',
+		icon: '/images/marker_snow.png',
+		subcat: ['Snow', 'Ice', 'Snowman', 'Snowboarder']
+	}, {
+		name: 'tash-issue',
+		descr: 'Trash somwhere',
+		icon: '/images/marker_trash.png',
+		subcat: ['Cans', 'Leafs', 'Dirt', '...']
+	}, {
+		name: 'light-issue',
+		descr: 'Not working light',
+		icon: '/images/marker_light.png',
+		subcat: ['Trafficlight', 'Streetlight', '...']
+	}];
 });
 
 phoneApp.config(function($routeProvider, $compileProvider) {
