@@ -13,13 +13,12 @@
 	<div class="wrapper">
 		<div id="reportCategory">
 			<img src="{{position.iconUrl}}" alt="">
-			<select class="topcoat-button">
+			<select class="topcoat-button" ng-model="selectedService" ng-options="item.service_name for item in serviceListOfSameGroup">
 				<option value="">specify ...</option>
-				<option value="" ng-repeat="cat in position.subcat">{{cat}}</option>
 			</select>
 			
 		</div>
-		<input type="text" class="topcoat-text-input" placeholder="Description ..." value=""> <br><br>
+		<input type="text" class="topcoat-text-input" ng-model="requestDescription" placeholder="Description ..." value=""> <br><br>
 		<div class="picture">
 			<button class="picture topcoat-button" ng-click="showPhotoInfo = true">
 				<i class="icon-picture"></i>

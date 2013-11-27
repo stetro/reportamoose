@@ -21,9 +21,26 @@ var app = {
 
 app.initialize();
 
-var phoneApp = angular.module('phoneApp', ["leaflet-directive", "ngDragDrop"]);
+var phoneApp = angular.module('phoneApp', ["leaflet-directive", "ngDragDrop", "ngResource"]);
 
-phoneApp.run(function($rootScope) {
+phoneApp.run(function($rootScope, $resource, $http) {
+
+	$rootScope.Service = $resource('/services/:id', {
+		id: "@service_code"
+	}, {
+		update: {
+			method: 'PUT'
+		}
+	});
+
+	$rootScope.Request = $resource('/requests/:id', {
+		id: "@service_request_id"
+	}, {
+		update: {
+			method: 'PUT'
+		}
+	});
+
 	$rootScope.locations = [];
 	$rootScope.report = {};
 	$rootScope.showThankMessage = false;
@@ -32,50 +49,11 @@ phoneApp.run(function($rootScope) {
 		mail: "",
 		city: ""
 	};
-	$rootScope.tempmarkers = [{
-		lat: 61.497414,
-		lng: 23.771583,
-		icon: 'images/warning.png'
-	}, {
-		lat: 61.497618,
-		lng: 23.751498,
-		icon: 'images/warning.png'
-	}, {
-		lat: 61.502410,
-		lng: 23.742572,
-		icon: 'images/warning.png'
-	}, {
-		lat: 61.505645,
-		lng: 23.770038,
-		icon: 'images/warning.png'
-	}];
-	$rootScope.issueMarkers = [{
-		name: 'animal-issue',
-		descr: 'Dead or alive moose',
-		icon: '/images/marker_moose.png',
-		subcat: ['Moose', 'Rabbit', 'Zombie', 'Human']
-	}, {
-		name: 'road-issue',
-		descr: 'Problems with the road',
-		icon: '/images/marker_road.png',
-		subcat: ['Asphalt', 'Pothole']
-	}, {
-		name: 'winter-issue',
-		descr: 'Winter care ...',
-		icon: '/images/marker_snow.png',
-		subcat: ['Snow', 'Ice', 'Snowman', 'Snowboarder']
-	}, {
-		name: 'tash-issue',
-		descr: 'Trash somwhere',
-		icon: '/images/marker_trash.png',
-		subcat: ['Cans', 'Leafs', 'Dirt', '...']
-	}, {
-		name: 'light-issue',
-		descr: 'Not working light',
-		icon: '/images/marker_light.png',
-		subcat: ['Trafficlight', 'Streetlight', '...']
-	}];
+	$rootScope.requestMarkers = [];
+	$rootScope.issueMarkers = [];
 });
+
+
 
 phoneApp.config(function($routeProvider, $compileProvider) {
 	$routeProvider
@@ -120,6 +98,8 @@ phoneApp.config(function($routeProvider, $compileProvider) {
 		});
 	$compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 });
+
+
 
 phoneApp.factory('cordovaReady', function() {
 	return function(fn) {
