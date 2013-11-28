@@ -154,7 +154,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			console.log("foo");
 			markers[services[i].group] = {
 				name: services[i].group,
-				icon: '/images/marker_' + services[i].group + '.png',
+				icon: 'images/marker_' + services[i].group + '.png',
 				descr: services[i].description
 			}
 		}
