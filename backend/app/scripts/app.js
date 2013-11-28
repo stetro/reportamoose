@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('backendApp', [
-	'ngResource'
-]).config(function($routeProvider) {
+var backendApp = angular.module('backendApp', ['leaflet-directive', 'ngResource']);
+backendApp.config(function($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/main.html',
@@ -15,4 +14,21 @@ angular.module('backendApp', [
 		.otherwise({
 			redirectTo: '/'
 		});
+});
+
+backendApp.run(function($rootScope, $resource, $http) {
+	$rootScope.Service = $resource('/services/:id', {
+		id: "@service_code"
+	}, {
+		update: {
+			method: 'PUT'
+		}
+	});
+	$rootScope.Request = $resource('/requests/:id', {
+		id: "@service_request_id"
+	}, {
+		update: {
+			method: 'PUT'
+		}
+	});
 });

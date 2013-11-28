@@ -15,25 +15,17 @@
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
 </head>
 <body ng-app="backendApp">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#/services">Services</a></li>
-                </ul>
-            </div>
-
-        </div>
-        <div class="container" ng-view=""></div>
-    </div>
+        <div ng-view=""></div>
+    
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-
     <script src="bower_components/bootstrap-css/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-leaflet/test/lib/leaflet.js"></script>
+    <script type="text/javascript" src="bower_components/angular-leaflet/src/angular-leaflet-directive.js"></script>
 
     <!-- build:js scripts/modules.js -->
     <script src="bower_components/angular-resource/angular-resource.js"></script>
