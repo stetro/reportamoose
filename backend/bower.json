@@ -1,20 +1,12 @@
 {
   "name": "backend",
   "version": "0.0.0",
-  "homepage": "https://github.com/stetro/reportamoose",
-  "authors": [
-    "Steffen Tröster <stetro.freaky@googlemail.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "public/bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "bootstrap-css": "~3.0.0"
+    "angular": "~1.0.7",
+    "json3": "~3.2.4",
+    "jquery": "~1.9.1",
+    "bootstrap-sass": "~2.3.1",
+    "es5-shim": "~2.0.8",
+    "angular-resource": "~1.0.7"
   }
 }
