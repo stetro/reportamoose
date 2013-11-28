@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootScope, $window, $location, cordovaReady) {
 	/*LEAFLET MAP SETTINGS*/
 	angular.extend($scope, {
@@ -16,17 +17,22 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			map: {
 				enable: ['click'],
 				logic: 'emit'
+			},
+			marker: {
+				enable: ['click', 'dragend'],
+				logic: 'emit'
 			}
 		},
 		menuOpen: false,
 		markers: {},
 		thanksMessage: false,
-		showReportButton: false
+		showReportButton: false,
+		showRequestDetail: false,
+		showSearchPositionDialog: false
 	});
 
-	console.log($rootScope.showThankMessage+" THANKS");
-
 	$scope.findCurrentLocation = (function() {
+		$scope.showSearchPositionDialog = true;
 		console.log('REPORT - Location Searching ...');
 		navigator.geolocation.getCurrentPosition(function(pos) {
 			console.log("REPORT - Location Searching - DONE");
@@ -44,14 +50,13 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 					lng: crd.longitude,
 					zoom: 15
 				};
+				$scope.showSearchPositionDialog = false;
 			});
 
 		}, function(err) {
 			console.log("REPORT - ERROR FINDING LOCATION");
 		});
 	});
-
-	$scope.findCurrentLocation();
 
 	$scope.addRequestMarkers = function() {
 		for (var i = $rootScope.requestMarkers.length - 1; i >= 0; i--) {
@@ -60,6 +65,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 				lng: $rootScope.requestMarkers[i].lng,
 				focus: false,
 				draggable: false,
+				raw: $rootScope.requestMarkers[i].raw,
 				icon: L.icon({
 					iconUrl: $rootScope.requestMarkers[i].icon,
 					iconSize: [33, 32],
@@ -69,6 +75,23 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			};
 		};
 	};
+
+	if (!$rootScope.keepPosition) {
+		$scope.findCurrentLocation();
+	} else {
+		$scope.markers.position = {
+			lat: $rootScope.position.lat,
+			lng: $rootScope.position.lng,
+			focus: true,
+			draggable: true
+		};
+
+		$scope.center = {
+			lat: $rootScope.position.lat,
+			lng: $rootScope.position.lng,
+			zoom: 15
+		};
+	}
 
 	$rootScope.allServices = $rootScope.Service.query(function() {
 		$rootScope.issueMarkers = $scope.generateIssueMarkersOutOf($rootScope.allServices);
@@ -96,12 +119,24 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		$scope.markers.position.subcat = marker.subcat;
 	};
 
+	$scope.$on('leafletDirectiveMarker.click', function(e, args) {
+		if (args.markerName == "position") {
+			return;
+		}
+		$scope.clickedMarker = $scope.markers[args.markerName];
+		$scope.showRequestDetail = true;
+		console.log('Click on Marker ...')
+	});
+
+	$scope.$on('leafletDirectiveMarker.dragend', function(e, args) {});
+
 	$scope.$on('leafletDirectiveMap.click', function(e, args) {
 		$scope.markers.position.lat = args.leafletEvent.latlng.lat;
 		$scope.markers.position.lng = args.leafletEvent.latlng.lng;
 		$scope.center.lat = args.leafletEvent.latlng.lat;
 		$scope.center.lng = args.leafletEvent.latlng.lng;
 		$scope.center.zoom = 15;
+		console.log('Click on Map ...')
 	});
 
 	$scope.lookUp = function(address) {
@@ -135,10 +170,12 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			var newRequest = {};
 			newRequest.lat = requests[r].lat;
 			newRequest.lng = requests[r].lng;
+			newRequest.raw = requests[r];
 			newRequest.message = requests[r].description;
 			for (var s in $rootScope.allServices) {
 				if ($rootScope.allServices[s].service_code == requests[r].service_code) {
 					newRequest.icon = 'images/warning_' + $rootScope.allServices[s].group + '.png';
+					newRequest.raw.service_name = $rootScope.allServices[s].service_name;
 					break;
 				}
 			}
@@ -151,7 +188,6 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		var markers = {};
 		var issueMarkers = [];
 		for (var i in services) {
-			console.log("foo");
 			markers[services[i].group] = {
 				name: services[i].group,
 				icon: 'images/marker_' + services[i].group + '.png',

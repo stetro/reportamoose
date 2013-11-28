@@ -39,6 +39,8 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 
 
 	$scope.back = function() {
+		$rootScope.showThankMessage = false;
+		$rootScope.keepPosition = true;
 		$window.history.back();
 	};
 	$scope.callback = function() {
@@ -51,7 +53,7 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 			"description": $scope.requestDescription,
 			"lat": $rootScope.position.lat,
 			"lng": $rootScope.position.lng,
-			"media_url": "http://city.gov.s3.amazonaws.com/requests/media/638344.jpg"
+			"media_url": "http://www.op-marburg.de/var/storage/images/op/lokales/wirtschaft/wirtschaft-lokal/schlagloecher-ziehen-vor-allem-stossdaempfer-in-mitleidenschaft/10969177-1-ger-DE/Schlagloecher-ziehen-vor-allem-Stossdaempfer-in-Mitleidenschaft_ArtikelQuer.jpg"
 		});
 		request.$save();
 		$rootScope.showThankMessage = true;

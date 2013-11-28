@@ -44,6 +44,7 @@ phoneApp.run(function($rootScope, $resource, $http) {
 	$rootScope.locations = [];
 	$rootScope.report = {};
 	$rootScope.showThankMessage = false;
+	$rootScope.keepPosition = false;
 	$rootScope.settings = {
 		name: "",
 		mail: "",
@@ -53,7 +54,14 @@ phoneApp.run(function($rootScope, $resource, $http) {
 	$rootScope.issueMarkers = [];
 });
 
-
+phoneApp.filter('timestampToTime', function() {
+	return function(timestamp) {
+		if (timestamp === undefined) return;
+		var string = timestamp.substr(0, timestamp.length - 5) + 'Z';
+		var time = Date.parse(string);
+		return time.toString("dd.MM.yyyy HH:mm");
+	};
+});
 
 phoneApp.config(function($routeProvider, $compileProvider) {
 	$routeProvider
