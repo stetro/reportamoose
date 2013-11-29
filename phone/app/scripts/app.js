@@ -21,10 +21,9 @@ var app = {
 
 app.initialize();
 
-var phoneApp = angular.module('phoneApp', ["leaflet-directive", "ngDragDrop", "ngResource"]);
+var phoneApp = angular.module('phoneApp', ["leaflet-directive", "ngDragDrop", "ngResource","ngCookies", "angularLocalStorage"]);
 
-phoneApp.run(function($rootScope, $resource, $http) {
-
+phoneApp.run(function($rootScope, $resource, $http, storage) {
 	$rootScope.Service = $resource('/services/:id', {
 		id: "@service_code"
 	}, {
@@ -52,6 +51,7 @@ phoneApp.run(function($rootScope, $resource, $http) {
 	};
 	$rootScope.requestMarkers = [];
 	$rootScope.issueMarkers = [];
+	storage.bind($rootScope, 'draft',{});
 });
 
 phoneApp.filter('timestampToTime', function() {

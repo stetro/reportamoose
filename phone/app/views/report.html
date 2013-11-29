@@ -24,14 +24,14 @@
 				<i class="icon-picture"></i>
 				Photo
 			</button>
-			<span ng-show="showPhotoInfo">&nbsp;Photo dialogue on Phone ...</span>
+			<img src="http://www.op-marburg.de/var/storage/images/op/lokales/wirtschaft/wirtschaft-lokal/schlagloecher-ziehen-vor-allem-stossdaempfer-in-mitleidenschaft/10969177-1-ger-DE/Schlagloecher-ziehen-vor-allem-Stossdaempfer-in-Mitleidenschaft_ArtikelQuer.jpg" alt="" height="50" ng-show="showPhotoInfo">
 		</div><br>
 		<label class="topcoat-checkbox">
 			<input type="checkbox">
 			<div class="topcoat-checkbox__checkmark"></div>
 			&nbsp;Get Feedback about Report
 		</label><br><br>
-		<button class="topcoat-button--cta" ng-click="send()" id="sendReportButton">
+		<button class="topcoat-button--cta" ng-click="send()" id="sendReportButton" ng-disabled="!selectedService">
 			<i class="icon-share"></i>
 			Report Now
 		</button>

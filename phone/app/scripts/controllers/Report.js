@@ -20,10 +20,20 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 			position: $rootScope.position
 		}
 	});
+
 	$scope.markers.position.draggable = false;
 	$scope.markers.position.focus = false;
 	$scope.showPhotoInfo = false;
 	$scope.showThankMessage = false;
+
+	$scope.markers.position.icon = L.icon({
+		iconUrl: $scope.markers.position.iconUrl,
+		iconSize: [35, 50],
+		iconAnchor: [16, 43],
+		popupAnchor: [2, -45]
+	});
+
+	$scope.requestDescription = $rootScope.position.requestDescription;
 
 	var generateListOfSameGroup = function() {
 		var list = [];
@@ -46,6 +56,11 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 	$scope.callback = function() {
 		console.log('Fooo');
 	};
+	$scope.save = function() {
+		$rootScope.draft = $rootScope.position;
+		$rootScope.position.requestDescription = $scope.requestDescription;
+		$location.path('/');
+	};
 	$scope.send = function() {
 
 		var request = new $rootScope.Request({
@@ -57,10 +72,6 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 		});
 		request.$save();
 		$rootScope.showThankMessage = true;
-		// $rootScope.position.icon = 'images/elk.png';
-		// $rootScope.position.message = "";
-		// $rootScope.position.focus = false;
-		// $rootScope.tempmarkers.push($rootScope.position);
 		$location.path('/');
 	}
 });

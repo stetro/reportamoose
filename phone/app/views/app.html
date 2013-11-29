@@ -1,15 +1,25 @@
 <div id="menu" ng-class="{'open': menuOpen}">
-	<ul class="topcoat-list__container">
-		<li class="topcoat-list__item">
-			Settings
+	<ul class="topcoat-list__container navigation">
+		<li class="topcoat-list__item" ng-click="settings()">
+			<i class="icon-gear"></i>
+			&nbsp;Settings
 		</li>
-		<li class="topcoat-list__item">
-			Drafts
+		<li class="topcoat-list__item" ng-show="draftAvailable()">
+			<span ng-click="reportDraft()">
+				<i class="icon-edit"></i>
+				&nbsp;Report latest Draft
+			</span>
+			<span ng-click="removeDraft()" id="removeDraft">
+				<i class="icon-remove"></i>
+			</span>
 		</li>
 		<li class="topcoat-list__item">
 			<form ng-submit="lookUp(address)">
-				<input type="text" ng-model="address" placeholder=" Address ..." class="topcoat-search-input">
+				<input type="text" ng-model="address" placeholder=" Search address ..." class="topcoat-search-input">
 			</form>
+		</li>
+		<li class="topcoat-list__item version">
+			Report a Moose Prototype 0.2.1
 		</li>
 	</ul>
 </div>
@@ -35,8 +45,8 @@
 			</ul>
 		</div>
 	</div>
-	<div id="findlocation">
-		<a ng-click="findCurrentLocation()"><i class="icon-location-arrow"></i></a>
+	<div id="findlocation" ng-click="findCurrentLocation()">
+		<i class="icon-location-arrow"></i>
 	</div>
 	<leaflet center="center" markers="markers" defaults="defaults" control="control" event-broadcast="events"></leaflet>	
 </div>

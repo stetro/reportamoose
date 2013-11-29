@@ -258,14 +258,52 @@ button#saveReportButton{
   position: absolute;
   top: 70px;
   left: 11px;
-  z-index:100000;
+  z-index:99;
   background-color:#fff;
   padding: 3px 6px 1px 5px;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
   box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
+  -webkit-transition-property: opacity, top;
+  -ms-transition-property: opacity, top;
+  transition-property: opacity, top;
+  -webkit-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 #findlocation:hover{
   cursor: pointer;
   background-color: #F5F5F5;
+}
+
+.open #findlocation{
+  top: 286px;
+  -webkit-transition-property: opacity, top;
+  -ms-transition-property: opacity, top;
+  transition-property: opacity, top;
+  -webkit-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.topcoat-list__container.navigation li{
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+}
+.topcoat-list__container.navigation li.topcoat-list__item.version{
+  color: #CCC;
+  text-align: center;
+  font-size: 0.8em;
+
+}
+#removeDraft{
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  font-size: 1.2em;
+}
+
+.picture img{
+  margin-left: 50px;
 }

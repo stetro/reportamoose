@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootScope, $window, $location, cordovaReady) {
+angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootScope, $window, $location, cordovaReady, storage) {
 	/*LEAFLET MAP SETTINGS*/
 	angular.extend($scope, {
 		defaults: {
@@ -31,6 +31,10 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		showSearchPositionDialog: false
 	});
 
+	$scope.draftAvailable = function() {
+		return $rootScope.draft !== '';
+	};
+
 	$scope.findCurrentLocation = (function() {
 		$scope.showSearchPositionDialog = true;
 		console.log('REPORT - Location Searching ...');
@@ -51,6 +55,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 					zoom: 15
 				};
 				$scope.showSearchPositionDialog = false;
+				$scope.showReportButton = false;
 			});
 
 		}, function(err) {
@@ -198,5 +203,19 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			issueMarkers.push(markers[marker]);
 		}
 		return issueMarkers;
-	}
+	};
+
+	$scope.settings = function() {
+		$rootScope.position = $scope.markers.position;
+		$location.path('/settings');
+	};
+
+	$scope.removeDraft = function() {
+		$rootScope.draft = '';
+	};
+
+	$scope.reportDraft = function() {
+		$rootScope.position = $rootScope.draft;
+		$location.path('/report');
+	};
 });
