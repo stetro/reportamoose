@@ -70,7 +70,12 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 			"lng": $rootScope.position.lng,
 			"media_url": "http://www.op-marburg.de/var/storage/images/op/lokales/wirtschaft/wirtschaft-lokal/schlagloecher-ziehen-vor-allem-stossdaempfer-in-mitleidenschaft/10969177-1-ger-DE/Schlagloecher-ziehen-vor-allem-Stossdaempfer-in-Mitleidenschaft_ArtikelQuer.jpg"
 		});
+
 		request.$save();
+
+		if ($rootScope.draft.lat == $rootScope.position.lat && $rootScope.draft.lng == $rootScope.position.lng) {
+			$rootScope.draft = '';
+		}
 		$rootScope.showThankMessage = true;
 		$location.path('/');
 	}
