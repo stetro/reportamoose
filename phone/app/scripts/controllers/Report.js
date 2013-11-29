@@ -24,7 +24,6 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 	$scope.markers.position.draggable = false;
 	$scope.markers.position.focus = false;
 	$scope.showPhotoInfo = false;
-	$scope.showThankMessage = false;
 
 	$scope.markers.position.icon = L.icon({
 		iconUrl: $scope.markers.position.iconUrl,

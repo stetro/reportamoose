@@ -25,7 +25,6 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		},
 		menuOpen: false,
 		markers: {},
-		thanksMessage: false,
 		showReportButton: false,
 		showRequestDetail: false,
 		showSearchPositionDialog: false
@@ -207,6 +206,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 
 	$scope.settings = function() {
 		$rootScope.position = $scope.markers.position;
+		$rootScope.showThankMessage = false;
 		$location.path('/settings');
 	};
 
