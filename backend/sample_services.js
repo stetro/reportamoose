@@ -159,7 +159,7 @@ request.get({
             });
         }
     } else {
-        console.log(res.body);
+        console.log(error);
     }
 });
 
