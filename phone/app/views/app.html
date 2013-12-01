@@ -2,12 +2,12 @@
 	<ul class="topcoat-list__container navigation">
 		<li class="topcoat-list__item" ng-click="settings()">
 			<i class="icon-gear"></i>
-			&nbsp;Settings
+			&nbsp;Asetukset
 		</li>
 		<li class="topcoat-list__item" ng-show="draftAvailable()">
 			<span ng-click="reportDraft()">
 				<i class="icon-edit"></i>
-				&nbsp;Report latest Draft
+				&nbsp;Ilmoita viimeisin luonnos
 			</span>
 			<span ng-click="removeDraft()" id="removeDraft">
 				<i class="icon-remove"></i>
@@ -15,7 +15,7 @@
 		</li>
 		<li class="topcoat-list__item">
 			<form ng-submit="lookUp(address)">
-				<input type="text" ng-model="address" placeholder=" Search address ..." class="topcoat-search-input">
+				<input type="text" ng-model="address" placeholder=" Etsi osoite ..." class="topcoat-search-input">
 			</form>
 		</li>
 		<li class="topcoat-list__item version">
@@ -31,12 +31,12 @@
 		<div id="reportButtonWrapper" >
 			<button class="topcoat-button--cta" id="reportButton" ng-click="reportNow()" ng-show="showReportButton">
 				<i class="icon-warning-sign"></i>
-				Report
+				Ilmoita
 			</button>
 		</div>
 		<div>
 			<div id="markerHider" ng-show="showSearchPositionDialog">
-				Searching Location ...
+				Etsitään osoitetta ...
 			</div>
 			<ul>
 				<li ng-repeat="marker in issueMarkers"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true}">
@@ -57,7 +57,7 @@
 </div>
 
 <div id="thanksmessage" ng-show="showThankMessage">
-	<p>Your issue has been reported.<br/>Thank you!</p>
+	<p>Ilmoittamasi vika tai puute on nyt lähetetty eteenpäin.<br/> Kiitos avustasi! </p>
 	<button class="topcoat-button--cta" ng-click="showThankMessage = false">OK</button>
 </div>
 
