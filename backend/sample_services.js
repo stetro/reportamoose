@@ -163,6 +163,25 @@ request.get({
     }
 });
 
+console.log('deleting all available requests ...')
+request.get({
+    url: service_url + 'requests',
+    json: true
+}, function(error, res, body) {
+    if (!error && res.statusCode == 200) {
+        for (i in body) {
+            request.del({
+                url: service_url + 'requests/' + body[i]._id,
+                json: true
+            }, function(error, res, body) {
+                process.stdout.write(".");
+            });
+        }
+    } else {
+        console.log(res.body);
+    }
+});
+
 
 process.stdout.write("Saving New: ");
 
