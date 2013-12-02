@@ -4,140 +4,143 @@ var service_url = 'http://localhost:3000/';
 
 var items = [{
     "service_name": "Onnettomuus",
-    "description": "Onnettomuus",
+    "description": "Vaaratilanne",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "danger",
     "metadata": true
 }, {
     "service_name": "Hirvi",
-    "description": "Hirvi",
+    "description": "Vaaratilanne",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "danger",
     "metadata": true
 }, {
     "service_name": "Muu kiireellinen vaaratilanne",
-    "description": "Muu kiireellinen vaaratilanne",
+    "description": "Vaaratilanne",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "danger",
     "metadata": true
-}, {
+}, 
+
+
+{
     "service_name": "Auraamaton tie",
-    "description": "Auraamaton tie",
+    "description": "Talvihuolto-ongelma",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
 }, {
     "service_name": "Puute urakoitsijan toiminnassa",
-    "description": "Puute urakoitsijan toiminnassa",
+    "description": "Talvihuolto-ongelmaa",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
 }, {
     "service_name": "Epätasainen tie",
-    "description": "Epätasainen tie",
+    "description": "Talvihuolto-ongelma",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
 }, {
     "service_name": "Liukas tie",
-    "description": "Liukas tie",
+    "description": "Talvihuolto-ongelma",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
 }, {
     "service_name": "Peittynyt liikennemerkki",
-    "description": "Peittynyt liikennemerkki",
+    "description": "Talvihuolto-ongelma",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
 }, {
     "service_name": "Muu",
-    "description": "Muu",
+    "description": "Talvihuolto-ongelma",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
 }, {
     "service_name": "Tarve ruohonleikkuulle, karsimiselle tai maisemoinnille",
-    "description": "Tarve ruohonleikkuulle, karsimiselle tai maisemoinnille",
+    "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "road",
     "metadata": true
 }, {
     "service_name": "Tukkeutunut katuoja",
-    "description": "Tukkeutunut katuoja",
+    "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "road",
     "metadata": true
 }, {
     "service_name": "Roskaisuus",
-    "description": "Roskaisuus",
+    "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "road",
     "metadata": true
 }, {
     "service_name": "Muu",
-    "description": "Muu",
+    "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "road",
     "metadata": true
 }, {
     "service_name": "Rikkinäinen tai puuttuva katuvalo",
-    "description": "Rikkinäinen tai puuttuva katuvalo",
+    "description": "Tien varustelun puute tai vika",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "light",
     "metadata": true
 }, {
     "service_name": "Rikkinäinen tai puuttuva liikennemerkki",
-    "description": "Rikkinäinen tai puuttuva liikennemerkki",
+    "description": "Tien varustelun puute tai vika",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "light",
     "metadata": true
 }, {
     "service_name": "Bussipysäkin puute tai vika",
-    "description": "Bussipysäkin puute tai vika",
+    "description": "Tien varustelun puute tai vika",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "light",
     "metadata": true
 }, {
     "service_name": "Puute urakoitsijan toiminnassa",
-    "description": "Puute urakoitsijan toiminnassa",
+    "description": "Tien varustelun puute tai vika",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "light",
     "metadata": true
 }, {
     "service_name": "Levähdysalueen tai parkkipaikan vika tai puute",
-    "description": "Levähdysalueen tai parkkipaikan vika tai puute",
+    "description": "Tien varustelun puute tai vika",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "light",
     "metadata": true
 }, {
     "service_name": "Tunnelin vika tai puute",
-    "description": "Tunnelin vika tai puute",
+    "description": "Tien varustelun puute tai vika",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "light",
     "metadata": true
 }, {
     "service_name": "Muu",
-    "description": "Muu",
+    "description": "Tien varustelun puute tai vika",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "light",
