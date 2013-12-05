@@ -41,18 +41,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			console.log("REPORT - Location Searching - DONE");
 			$scope.$apply(function() {
 				var crd = pos.coords;
-				$scope.markers.position = {
-					lat: crd.latitude,
-					lng: crd.longitude,
-					focus: true,
-					draggable: true
-				};
-
-				$scope.center = {
-					lat: crd.latitude,
-					lng: crd.longitude,
-					zoom: 15
-				};
+				$scope.setNewPosition(crd.latitude, crd.longitude);
 				$scope.showSearchPositionDialog = false;
 				$scope.showReportButton = false;
 			});
@@ -61,6 +50,20 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			console.log("REPORT - ERROR FINDING LOCATION");
 		});
 	});
+
+	$scope.setNewPosition = function(newLat, newLng) {
+		$scope.markers.position = {
+			lat: newLat,
+			lng: newLng,
+			focus: true,
+			draggable: true
+		};
+		$scope.center = {
+			lat: newLat,
+			lng: newLng,
+			zoom: 15
+		};
+	};
 
 	$scope.addRequestMarkers = function() {
 		for (var i = $rootScope.requestMarkers.length - 1; i >= 0; i--) {
@@ -147,15 +150,9 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		delete $http.defaults.headers.common['X-Requested-With'];
 		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=false&address=' + address).success(function(data) {
 			if (data.results.length > 0) {
+				$scope.setNewPosition(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
 				$scope.address = '';
 				$scope.menuOpen = false;
-				$scope.markers.position.lat = data.results[0].geometry.location.lat;
-				$scope.markers.position.lng = data.results[0].geometry.location.lng;
-				$scope.center = {
-					lat: data.results[0].geometry.location.lat,
-					lng: data.results[0].geometry.location.lng,
-					zoom: 15
-				}
 				$('.topcoat-search-input').blur();
 			}
 		});
