@@ -217,13 +217,13 @@ div#reportButtonWrapper {
 button#sendReportButton{
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  
 }
 
 button#saveReportButton{
   position: absolute;
   left: 10px;
-  bottom: 10px;
+  
 }
 #thanksmessage{
   position: absolute;

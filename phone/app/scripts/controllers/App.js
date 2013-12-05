@@ -156,6 +156,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 					lng: data.results[0].geometry.location.lng,
 					zoom: 15
 				}
+				$('.topcoat-search-input').blur();
 			}
 		});
 	};
