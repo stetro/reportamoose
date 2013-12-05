@@ -1,6 +1,36 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-pills" id="header">
     <li class="active"><a href="#">Home</a></li>
     <li><a href="#/services">Services</a></li>
 </ul>
 
 <leaflet center="center" markers="markers" defaults="defaults" control="control" event-broadcast="events"></leaflet>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+			<h4>Filter Requests</h4>
+			<form role="form">
+				<div class="form-group">
+					<label for="possibleStatus" class="control-label">Service:</label>
+					<select ng-model="filterService" ng-options="service.service_name  group by service.description for service in allServices" id="possibleServices" class="form-control">
+						<option value="">Every Service </option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="possibleStatus" class="control-label">Status:</label>
+					<select ng-model="filterStatus" ng-options="status for status in possibleStatus" id="possibleStatus" class="form-control">
+						<option value="">Every Status </option>
+					</select>
+				</div>
+				<!-- <div class="form-group">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Check me out
+						</label>
+					</div>
+				</div> -->
+			</form>
+		</div>
+	</div>
+</div>

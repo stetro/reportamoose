@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('backendApp').controller('MainCtrl', function($scope,$rootScope) {
+angular.module('backendApp').controller('MainCtrl', function($scope, $rootScope) {
 	angular.extend($scope, {
 		defaults: {
 			scrollWheelZoom: false,
@@ -11,7 +11,8 @@ angular.module('backendApp').controller('MainCtrl', function($scope,$rootScope) 
 			lng: 23.7610254,
 			zoom: 15
 		},
-		markers: {}
+		markers: {},
+		possibleStatus: ['open','handled','closed']
 	});
 	$rootScope.allServices = $rootScope.Service.query(function() {
 		$rootScope.issueMarkers = $scope.generateIssueMarkersOutOf($rootScope.allServices);
