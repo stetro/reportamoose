@@ -49,6 +49,7 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 
 	$scope.back = function() {
 		$rootScope.showThankMessage = false;
+		$rootScope.showDraftMessage = false;
 		$rootScope.keepPosition = true;
 		$window.history.back();
 	};
@@ -58,6 +59,7 @@ angular.module('phoneApp').controller('ReportCtrl', function($scope, $rootScope,
 	$scope.save = function() {
 		$rootScope.draft = $rootScope.position;
 		$rootScope.position.requestDescription = $scope.requestDescription;
+		$rootScope.showDraftMessage = true;
 		$location.path('/');
 	};
 	$scope.send = function() {

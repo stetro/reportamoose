@@ -170,6 +170,10 @@ button#reportButton {
   position: absolute;
 }
 
+.open div#reportButtonWrapper{
+  display: none;
+}
+
 div#reportButtonWrapper {
   margin: 10px;
   position: relative;
@@ -217,15 +221,13 @@ div#reportButtonWrapper {
 button#sendReportButton{
   position: absolute;
   right: 10px;
-  
 }
 
 button#saveReportButton{
   position: absolute;
   left: 10px;
-  
 }
-#thanksmessage{
+#thanksmessage, #draftmessage{
   position: absolute;
   width: 100%;
   top: 0;
@@ -235,7 +237,7 @@ button#saveReportButton{
   left: 0;
   z-index: 100000;
 }
-#thanksmessage p{
+#thanksmessage p, #draftmessage p{
   margin-top: 250px;
 }
 #requestdetail{
@@ -306,4 +308,7 @@ button#saveReportButton{
 
 .picture img{
   margin-left: 50px;
+}
+#menu{
+  z-index: 10000;
 }

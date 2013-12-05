@@ -148,7 +148,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 
 	$scope.lookUp = function(address) {
 		delete $http.defaults.headers.common['X-Requested-With'];
-		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=false&address=' + address).success(function(data) {
+		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=true&address=' + address).success(function(data) {
 			if (data.results.length > 0) {
 				$scope.setNewPosition(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
 				$scope.address = '';
@@ -205,6 +205,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 	$scope.settings = function() {
 		$rootScope.position = $scope.markers.position;
 		$rootScope.showThankMessage = false;
+		$rootScope.showDraftMessage = false;
 		$location.path('/settings');
 	};
 

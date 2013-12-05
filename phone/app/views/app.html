@@ -61,6 +61,11 @@
 	<button class="topcoat-button--cta" ng-click="showThankMessage = false">OK</button>
 </div>
 
+<div id="draftmessage" ng-show="showDraftMessage">
+	<p>Kiitos draafti! :P<br/>Draft can be continued with 'Ilmoita viimeisin luonnos' in the menu.</p>
+	<button class="topcoat-button--cta" ng-click="showDraftMessage = false">OK</button>
+</div>
+
 <div id="requestdetail" ng-show="showRequestDetail">
 	<h3>{{clickedMarker.raw.service_name}}</h3>
 	<p>{{clickedMarker.raw.timestamp | timestampToTime}}</p>

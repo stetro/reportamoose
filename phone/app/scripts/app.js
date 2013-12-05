@@ -43,6 +43,7 @@ phoneApp.run(function($rootScope, $resource, $http, storage) {
 	$rootScope.locations = [];
 	$rootScope.report = {};
 	$rootScope.showThankMessage = false;
+	$rootScope.showDraftMessage = false;
 	$rootScope.keepPosition = false;
 	$rootScope.settings = {
 		name: "",
