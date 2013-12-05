@@ -108,8 +108,11 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		});
 	});
 
-	$scope.toggleMenu = function() {
+	$scope.toggleMenu = function(search) {
 		$scope.menuOpen = !$scope.menuOpen;
+		if (search) {
+			$('.topcoat-search-input').focus();
+		}
 	};
 
 	$scope.setIssue = function(marker) {

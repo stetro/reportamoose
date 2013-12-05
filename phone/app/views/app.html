@@ -53,7 +53,8 @@
 <div id="overall" ng-class="{'open': menuOpen}"></div>
 
 <div class="overmap" ng-class="{'open':menuOpen}" >
-	<i ng-class="{'icon-angle-up': menuOpen,'icon-reorder':!menuOpen}" ng-click="toggleMenu()" id=""></i>
+	<i ng-class="{'icon-search': menuOpen,'icon-search':!menuOpen}" ng-click="toggleMenu(true)" id=""></i>
+	<i ng-class="{'icon-angle-up': menuOpen,'icon-reorder':!menuOpen}" ng-click="toggleMenu(false)" id=""></i>
 </div>
 
 <div id="thanksmessage" ng-show="showThankMessage">

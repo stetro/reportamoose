@@ -73,13 +73,15 @@ div.overmap.open {
   -ms-transition-duration: 0.5s;
   transition-duration: 0.5s;
   top: 220px;
+  background: none;
+  box-shadow: none;
 }
 
 div.overmap {
   margin-left: 60px;
   z-index: 1000;
   position: absolute;
-  right: 15px;
+  right: 10px;
   top: 10px;
   -webkit-transition-property: top, bottom;
   -ms-transition-property: top, bottom;
@@ -87,13 +89,26 @@ div.overmap {
   -webkit-transition-duration: 0.5s;
   -ms-transition-duration: 0.5s;
   transition-duration: 0.5s;
+  background-color: #FFF;
+  border-radius: 5px ;
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
+  
 }
 
 div.overmap i {
   color: #000;
-  font-size: 2em;
+  font-size: 1.6em;
   z-index:2000;
+  padding: 5px;
+  display: inline-block;
 }
+
+div.overmap .icon-search{
+  border-right: 1px solid #CCC;
+  
+}
+
 div.overmap i.icon-angle-up{
   color:#FFF;
   z-index:2000;
@@ -314,4 +329,14 @@ button#saveReportButton{
 }
 #menu{
   z-index: 10000;
+}
+
+#backbutton i{
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 1.6em;
+}
+#backbutton{
+  height: 45px;
 }
