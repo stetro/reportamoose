@@ -312,7 +312,7 @@ button#saveReportButton{
 }
 
 .open #findlocation{
-  top: 286px;
+  top: 300px;
   -webkit-transition-property: opacity, top;
   -ms-transition-property: opacity, top;
   transition-property: opacity, top;
