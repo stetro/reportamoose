@@ -75,6 +75,7 @@ div.overmap.open {
   top: 220px;
   background: none;
   box-shadow: none;
+  border: none;
 }
 
 div.overmap {

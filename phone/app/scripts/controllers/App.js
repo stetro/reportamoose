@@ -154,6 +154,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=true&address=' + address).success(function(data) {
 			if (data.results.length > 0) {
 				$scope.setNewPosition(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
+				$scope.showReportButton = false;
 				$scope.address = '';
 				$scope.menuOpen = false;
 				$('.topcoat-search-input').blur();
