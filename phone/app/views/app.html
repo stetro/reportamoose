@@ -39,7 +39,7 @@
 				Etsitään osoitetta ...
 			</div>
 			<ul>
-				<li ng-repeat="marker in issueMarkers"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true}">
+				<li ng-repeat="marker in issueMarkers"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true,drag:foo}" >
 					<img src="images/marker-shadow.png" class="marker-background">	
 					<img src="{{marker.icon}}" alt="" ng-click="setIssue(marker)" class="marker">
 				</li>

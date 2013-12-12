@@ -6,7 +6,8 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 	angular.extend($scope, {
 		defaults: {
 			scrollWheelZoom: false,
-			maxZoom: 18
+			maxZoom: 18,
+			tileLayer: "http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg"
 		},
 		center: {
 			lat: 61.4981508,
@@ -117,6 +118,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 
 	$scope.setIssue = function(marker) {
 		$scope.showReportButton = true;
+		$(".leaflet-container").click();
 		var lat = $scope.markers.position.lat;
 		var lng = $scope.markers.position.lng;
 		delete $scope.markers.position;

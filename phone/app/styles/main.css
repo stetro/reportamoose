@@ -119,13 +119,16 @@ div.overmap i.icon-angle-up{
 div.overmap i:hover {
   cursor: pointer;
 }
+div.overmap i.icon-reorder{
+  padding-right: 8px;
+}
 
 div.undermap {
   width: 100%;
   z-index: 100;
   position: absolute;
   bottom: 0px;
-  background-color: #EBEBEB;
+  background-color: #F5F5F5;
   border-top: 4px solid rgba(0,0,0,0.3);
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
