@@ -22,14 +22,14 @@ div.test{
   left: 0;
   right: 0;
   background-color: rgba(0,0,0,0.6);
-  height: 50px;
+  height: 45px;
   padding-top: 30px;
   font-weight: bold;
   z-index: 99999;
 }
 #app .leaflet-container {
   position: absolute;
-  bottom: 55px;
+  bottom: 70px;
   left: 0;
   width: 100%;
   top: 0;
@@ -132,11 +132,12 @@ div.undermap {
 }
 
 div.undermap div.markers {
-  height: 70px;
+  height: 100px;
   padding: 0;
   margin: 0;
   overflow: scroll;
 }
+
 
 div.undermap ul {
   margin: 0;
@@ -155,9 +156,13 @@ div.undermap ul > li {
   padding: 0;
   float: left;
   padding-left: 20px;
-  width:26px;
-  height: 50px;
+  width:30px;
+  height: 60px;
   position: relative;
+}
+
+div.undermap ul > li .marker{
+  width:36px;
 }
 
 div.undermap ul > li:hover{
@@ -357,7 +362,7 @@ button#saveReportButton{
 }
 div.undermap ul > li .marker-background{
   position: absolute;
-  top: 0;
-  left: 21px;
+  top: 8px;
+  left: 26px;
   z-index: 40;
 }

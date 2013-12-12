@@ -122,7 +122,9 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			iconUrl: marker.icon,
 			iconSize: [35, 50],
 			iconAnchor: [16, 43],
-			popupAnchor: [2, -45]
+			popupAnchor: [2, -45],
+			shadowUrl: '',
+			iconRetinaUrl: ''
 		});
 		$scope.markers.position.iconUrl = marker.icon;
 		$scope.markers.position.message = marker.descr;
@@ -180,7 +182,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 			newRequest.message = requests[r].description;
 			for (var s in $rootScope.allServices) {
 				if ($rootScope.allServices[s].service_code == requests[r].service_code) {
-					newRequest.icon = 'images/warning_' + $rootScope.allServices[s].group + '.png';
+					newRequest.icon = 'images/svgs/' + $rootScope.allServices[s].group + '_report.svg';
 					newRequest.raw.service_name = $rootScope.allServices[s].service_name;
 					break;
 				}
@@ -196,7 +198,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		for (var i in services) {
 			markers[services[i].group] = {
 				name: services[i].group,
-				icon: 'images/marker_' + services[i].group + '.png',
+				icon: 'images/svgs/' + services[i].group + '.svg',
 				descr: services[i].description
 			}
 		}

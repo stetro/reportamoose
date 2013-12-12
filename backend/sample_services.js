@@ -4,21 +4,30 @@ var service_url = 'http://localhost:3000/';
 
 var items = [{
     "service_name": "Onnettomuus",
-    "description": "Vaaratilanne",
+    "description": "Tiedota akuutista ongelmasta tiellä, hätätilanteessa soita aina ensin 112.",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "danger",
     "metadata": true
 }, {
-    "service_name": "Hirvi",
-    "description": "Vaaratilanne",
+    "service_name": "Hirvi lähistöllä",
+    "description": "Tiedota akuutista ongelmasta tiellä, hätätilanteessa soita aina ensin 112.",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "danger",
     "metadata": true
-}, {
+}, 
+{
+    "service_name": "Ruuhka",
+    "description": "Tiedota akuutista ongelmasta tiellä, hätätilanteessa soita aina ensin 112.",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "danger",
+    "metadata": true
+}, 
+{
     "service_name": "Muu kiireellinen vaaratilanne",
-    "description": "Vaaratilanne",
+    "description": "Tiedota akuutista ongelmasta tiellä, hätätilanteessa soita aina ensin 112.",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "danger",
@@ -36,7 +45,7 @@ var items = [{
 }, {
     "service_name": "Puute urakoitsijan toiminnassa",
     "description": "Talvihuolto-ongelmaa",
-    "type": "realtime",
+    "type": "realtime", 
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
@@ -68,84 +77,120 @@ var items = [{
     "keywords": "some keywords",
     "group": "snow",
     "metadata": true
-}, {
+}, 
+
+{
     "service_name": "Tarve ruohonleikkuulle, karsimiselle tai maisemoinnille",
     "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "road",
+    "group": "tree",
     "metadata": true
 }, {
     "service_name": "Tukkeutunut katuoja",
     "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "road",
+    "group": "tree",
     "metadata": true
 }, {
     "service_name": "Roskaisuus",
     "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "road",
+    "group": "tree",
     "metadata": true
 }, {
     "service_name": "Muu",
     "description": "Viheralueen huollontarve",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "road",
+    "group": "tree",
     "metadata": true
-}, {
+}, 
+
+{
     "service_name": "Rikkinäinen tai puuttuva katuvalo",
-    "description": "Tien varustelun puute tai vika",
+    "description": "Katuvalon, liikennemerkin tai muun tien varustelun puute",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "light",
+    "group": "traffic",
     "metadata": true
 }, {
     "service_name": "Rikkinäinen tai puuttuva liikennemerkki",
-    "description": "Tien varustelun puute tai vika",
+    "description": "Katuvalon, liikennemerkin tai muun tien varustelun puute",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "light",
+    "group": "traffic",
     "metadata": true
 }, {
     "service_name": "Bussipysäkin puute tai vika",
-    "description": "Tien varustelun puute tai vika",
+    "description": "Katuvalon, liikennemerkin tai muun tien varustelun puute",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "light",
+    "group": "traffic",
     "metadata": true
 }, {
     "service_name": "Puute urakoitsijan toiminnassa",
-    "description": "Tien varustelun puute tai vika",
+    "description": "Katuvalon, liikennemerkin tai muun tien varustelun puute",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "light",
+    "group": "traffic",
     "metadata": true
 }, {
     "service_name": "Levähdysalueen tai parkkipaikan vika tai puute",
-    "description": "Tien varustelun puute tai vika",
+    "description": "Katuvalon, liikennemerkin tai muun tien varustelun puute",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "light",
+    "group": "traffic",
     "metadata": true
 }, {
     "service_name": "Tunnelin vika tai puute",
-    "description": "Tien varustelun puute tai vika",
+    "description": "Katuvalon, liikennemerkin tai muun tien varustelun puute",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "light",
+    "group": "traffic",
     "metadata": true
 }, {
     "service_name": "Muu",
-    "description": "Tien varustelun puute tai vika",
+    "description": "Katuvalon, liikennemerkin tai muun tien varustelun puute",
     "type": "realtime",
     "keywords": "some keywords",
-    "group": "light",
+    "group": "traffic",
     "metadata": true
-}];
+},
+
+
+, {
+    "service_name": "Huollontarve",
+    "description": "Soratien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "gravelroad",
+    "metadata": true
+},, {
+    "service_name": "Kelirikko tai rakenteen korjaustarve",
+    "description": "Soratien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "gravelroad",
+    "metadata": true
+},, {
+    "service_name": "Puute urakoitsijan toiminnassa",
+    "description": "Soratien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "gravelroad",
+    "metadata": true
+},, {
+    "service_name": "Muu",
+    "description": "Soratien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "gravelroad",
+    "metadata": true
+}
+];
 
 console.log('deleting all available services ...')
 request.get({
