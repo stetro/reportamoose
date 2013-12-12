@@ -142,7 +142,7 @@ div.undermap div.markers {
 div.undermap ul {
   margin: 0;
   padding: 0;
-  width: 800px;
+  width: 100%;
 }
 
 div.undermap ul > li img{
