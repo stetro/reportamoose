@@ -118,7 +118,6 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 
 	$scope.setIssue = function(marker) {
 		$scope.showReportButton = true;
-		$(".leaflet-container").click();
 		var lat = $scope.markers.position.lat;
 		var lng = $scope.markers.position.lng;
 		delete $scope.markers.position;
