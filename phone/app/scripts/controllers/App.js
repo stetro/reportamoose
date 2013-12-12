@@ -135,6 +135,8 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 					shadowUrl: '',
 					iconRetinaUrl: ''
 				});
+				$scope.markers.position.focus = true;
+				$scope.markers.position.draggable = true;
 				$scope.markers.position.iconUrl = marker.icon;
 				$scope.markers.position.message = marker.descr;
 				$scope.markers.position.subcat = marker.subcat;
