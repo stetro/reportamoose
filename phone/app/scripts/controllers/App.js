@@ -117,18 +117,30 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 
 	$scope.setIssue = function(marker) {
 		$scope.showReportButton = true;
-		$scope.markers.position.name = marker.name;
-		$scope.markers.position.icon = L.icon({
-			iconUrl: marker.icon,
-			iconSize: [35, 50],
-			iconAnchor: [16, 43],
-			popupAnchor: [2, -45],
-			shadowUrl: '',
-			iconRetinaUrl: ''
-		});
-		$scope.markers.position.iconUrl = marker.icon;
-		$scope.markers.position.message = marker.descr;
-		$scope.markers.position.subcat = marker.subcat;
+		var lat = $scope.markers.position.lat;
+		var lng = $scope.markers.position.lng;
+		delete $scope.markers.position;
+		window.setTimeout(function() {
+			$scope.$apply(function() {
+				$scope.markers.position = {
+					lat: lat,
+					lng: lng
+				};
+				$scope.markers.position.name = marker.name;
+				$scope.markers.position.icon = L.icon({
+					iconUrl: marker.icon,
+					iconSize: [35, 50],
+					iconAnchor: [16, 43],
+					popupAnchor: [2, -45],
+					shadowUrl: '',
+					iconRetinaUrl: ''
+				});
+				$scope.markers.position.iconUrl = marker.icon;
+				$scope.markers.position.message = marker.descr;
+				$scope.markers.position.subcat = marker.subcat;
+			});
+		}, 1);
+
 	};
 
 	$scope.$on('leafletDirectiveMarker.click', function(e, args) {
