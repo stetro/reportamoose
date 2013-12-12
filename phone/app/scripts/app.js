@@ -5,11 +5,7 @@ var app = {
 		this.bindEvents();
 	},
 	bindEvents: function() {
-		document.addEventListener('deviceready', this.onDeviceReady, true);
-		document.addEventListener("touchstart", touchHandler, true);
-		document.addEventListener("touchmove", touchHandler, true);
-		document.addEventListener("touchend", touchHandler, true);
-		document.addEventListener("touchcancel", touchHandler, true);
+		document.addEventListener('deviceready', this.onDeviceReady, true);	
 	},
 	onDeviceReady: function() {
 		console.log('REPORT - Device Ready!');
@@ -111,23 +107,6 @@ phoneApp.config(function($routeProvider, $compileProvider) {
 		});
 	$compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 });
-
-function touchHandler(event) {
-	var touch = event.changedTouches[0];
-
-	var simulatedEvent = document.createEvent("MouseEvent");
-	simulatedEvent.initMouseEvent({
-			touchstart: "mousedown",
-			touchmove: "mousemove",
-			touchend: "mouseup"
-		}[event.type], true, true, window, 1,
-		touch.screenX, touch.screenY,
-		touch.clientX, touch.clientY, false,
-		false, false, false, 0, null);
-
-	touch.target.dispatchEvent(simulatedEvent);
-	event.preventDefault();
-}
 
 phoneApp.factory('cordovaReady', function() {
 	return function(fn) {
