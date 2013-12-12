@@ -366,3 +366,6 @@ div.undermap ul > li .marker-background{
   left: 26px;
   z-index: 40;
 }
+.leaflet-control-attribution.leaflet-control{
+  bottom: 3px;
+}
