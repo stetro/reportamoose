@@ -2,6 +2,27 @@ body.dark {
   color: #F0F1F1;
   background: #4A4D4E;
 }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+ 
+.clearfix {
+  display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+  display: block;
+}
+ 
+* html .clearfix {
+  height: 1%;
+}
 div.test{
   width: 100px;
   height: 100px;
@@ -147,7 +168,7 @@ div.undermap div.markers {
 div.undermap ul {
   margin: 0;
   padding: 0;
-  width: 500px;
+  width: 550px;
 }
 
 div.undermap ul > li img{
@@ -161,7 +182,9 @@ div.undermap ul > li {
   padding: 0;
   float: left;
   padding-left: 20px;
+  padding-top: 10px;
   width:30px;
+  padding-right: 5px;
   height: 60px;
   position: relative;
 }
@@ -203,10 +226,8 @@ div.undermap ul > li:hover{
 }
 
 button#reportButton {
-  margin: 0 auto;
-  bottom: 35px;
   width: 100%;
-  position: absolute;
+  z-index: 1000;
 }
 
 .open div#reportButtonWrapper{
@@ -214,9 +235,16 @@ button#reportButton {
 }
 
 div#reportButtonWrapper {
-  margin: 10px;
-  position: relative;
+  width: 100%;
+  position: absolute;
+  bottom: 85px;
+  margin: 0;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;   
+  box-sizing: border-box;   
 }
+
 #overall.open{
   display: block;
   z-index: 100;
@@ -285,15 +313,22 @@ button#saveReportButton{
 #requestdetail{
   position: absolute;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   top: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.85);
   text-align: center;
   left: 0;
   z-index: 100000; 
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;   
+  box-sizing: border-box;        
 }
-#requestdetail h4{
-  margin-top: 25px;
+#requestdetail h3{
+  margin-top: 60px;
+  text-align: left;
 }
 #findlocation i{
   color: #000;
@@ -373,4 +408,45 @@ div.undermap ul > li .marker-background{
 }
 .leaflet-control-attribution.leaflet-control{
   bottom: 3px;
+}
+#requeststatus .topcoat-button-bar__button{
+  padding: 0 10px;
+  line-height: 2em;
+}
+#requeststatus{
+  
+  float: left;
+  display: inline;
+}
+#requestdate{
+  float: right;
+  text-align: right;
+  width: 90px;
+}
+#hideRequestDetailButton{
+  float: right;
+}
+#requestDetailComments{
+  width: 100%;
+  text-align: left;
+}
+#requestDetailComments .comment{
+  margin-bottom: 10px;
+}
+#requestDetailComments .comment .time{
+  width: 30%;
+  float: left;
+}
+#requestDetailComments .comment .text{
+  width: 70%;
+  float: left;
+}
+#requestDetailNavigation{
+  margin-top: 20px;
+}
+#voteDetailButton{
+  float: left;
+}
+#requestDetailDescription{
+  text-align: left;
 }

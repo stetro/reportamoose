@@ -27,23 +27,23 @@
 
 
 <div id="app" ng-class="{'open': menuOpen}">
+	<div id="reportButtonWrapper" >
+		<button class="topcoat-button--cta" id="reportButton" ng-click="reportNow()" ng-show="showReportButton">
+			<i class="icon-warning-sign"></i>
+			Ilmoittamiseen
+		</button>
+	</div>
 	<div class="undermap"> 
-		<div id="reportButtonWrapper" >
-			<button class="topcoat-button--cta" id="reportButton" ng-click="reportNow()" ng-show="showReportButton">
-				<i class="icon-warning-sign"></i>
-				Ilmoittamiseen
-			</button>
-		</div>
 		<div>
 			<div id="markerHider" ng-show="showSearchPositionDialog">
 				Etsitään osoitetta ...
 			</div>
 			<ul>
-				<li ng-repeat="marker in issueMarkers"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true,drag:foo}" >
+				<li ng-repeat="marker in issueMarkers"   >
 					<img src="images/marker-shadow.png" class="marker-background">	
 					<img src="{{marker.icon}}" alt="" ng-click="setIssue(marker)" class="marker">
 				</li>
-				<li ng-repeat="marker in issueMarkers"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true,drag:foo}" >
+				<li ng-repeat="marker in issueMarkers"   >
 					<img src="images/marker-shadow.png" class="marker-background">	
 					<img src="{{marker.icon}}" alt="" ng-click="setIssue(marker)" class="marker">
 				</li>
@@ -73,10 +73,46 @@
 </div>
 
 <div id="requestdetail" ng-show="showRequestDetail">
+	<div id="requeststatus">
+		<div class="topcoat-button-bar">
+			<div class="topcoat-button-bar__item">
+				<button class="topcoat-button-bar__button">
+					<i class="icon-check"></i>
+					open
+				</button>
+			</div>
+			<div class="topcoat-button-bar__item">
+				<button class="topcoat-button-bar__button" ng-disabled="clickedMarker.raw.status=='open'">
+					<i class="icon-forward"></i>
+					in process
+				</button>
+			</div>
+		</div>
+	</div>
+	<div id="requestdate">
+		{{clickedMarker.raw.timestamp | timestampToDate}}
+		<br/>
+		{{clickedMarker.raw.timestamp | timestampToTime}}
+	</div>
 	<h3>{{clickedMarker.raw.service_name}}</h3>
-	<p>{{clickedMarker.raw.timestamp | timestampToTime}}</p>
-	<p>{{clickedMarker.raw.description}}</p>
-
-	<p><img src="{{clickedMarker.raw.media_url}}" alt="" width="300"></p>
-	<button class="topcoat-button--cta" ng-click="showRequestDetail = false">OK</button>
+	<p><img src="{{clickedMarker.raw.media_url}}" alt="" width="250"></p>
+	<p id="requestDetailDescription">{{clickedMarker.raw.description}}</p>
+	<div id="requestDetailComments">
+		<div class="comment clearfix">
+			<div class="time">12.04.2014</div>
+			<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+		</div>
+		<form ng-submit="addNewComment()">
+			<input type="text" class="topcoat-text-input" placeholder="Comment ..." ng-model="commentText">	
+		</form>
+	</div>
+		<div id="requestDetailNavigation">
+		<button class="topcoat-button" id="voteDetailButton">
+			<i class="icon-chevron-sign-up"></i>
+			0
+		</button>
+		<button class="topcoat-button--cta" ng-click="showRequestDetail = false" id="hideRequestDetailButton">OK</button>	
+	</div>
+	
+	
 </div>

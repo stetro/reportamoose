@@ -77,7 +77,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 				icon: L.icon({
 					iconUrl: $rootScope.requestMarkers[i].icon,
 					iconSize: [33, 32],
-					iconAnchor: [16, 43],
+					iconAnchor: [15, 15],
 					popupAnchor: [2, -45]
 				})
 			};
@@ -168,7 +168,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 
 	$scope.lookUp = function(address) {
 		delete $http.defaults.headers.common['X-Requested-With'];
-		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=true&address=' + address).success(function(data) {
+		$http.get('http://maps.google.com/maps/api/geocode/json?sensor=true&components=administrative_area:Tampere|country:Finland&address=' + address).success(function(data) {
 			if (data.results.length > 0) {
 				$scope.setNewPosition(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng);
 				$scope.showReportButton = false;

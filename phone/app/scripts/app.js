@@ -5,7 +5,7 @@ var app = {
 		this.bindEvents();
 	},
 	bindEvents: function() {
-		document.addEventListener('deviceready', this.onDeviceReady, true);	
+		document.addEventListener('deviceready', this.onDeviceReady, true);
 	},
 	onDeviceReady: function() {
 		console.log('REPORT - Device Ready!');
@@ -55,14 +55,25 @@ phoneApp.run(function($rootScope, $resource, $http, storage) {
 	storage.bind($rootScope, 'draft', {});
 });
 
+phoneApp.filter('timestampToDate', function() {
+	return function(timestamp) {
+		if (timestamp === undefined) return;
+		return convertDate(timestamp).toString("dd.MM.yyyy");
+	};
+});
+
 phoneApp.filter('timestampToTime', function() {
 	return function(timestamp) {
 		if (timestamp === undefined) return;
-		var string = timestamp.substr(0, timestamp.length - 5) + 'Z';
-		var time = Date.parse(string);
-		return time.toString("dd.MM.yyyy HH:mm");
+		return convertDate(timestamp).toString("HH:mm");
 	};
 });
+
+function convertDate(timestamp) {
+	var string = timestamp.substr(0, timestamp.length - 5) + 'Z';
+	var time = Date.parse(string);
+	return time;
+}
 
 phoneApp.config(function($routeProvider, $compileProvider) {
 	$routeProvider
