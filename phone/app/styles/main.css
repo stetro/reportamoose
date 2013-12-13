@@ -402,7 +402,7 @@ button#saveReportButton{
 }
 div.undermap ul > li .marker-background{
   position: absolute;
-  top: 8px;
+  top: 18px;
   left: 26px;
   z-index: 40;
 }
