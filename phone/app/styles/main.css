@@ -126,7 +126,8 @@ div.overmap i.icon-reorder{
 div.undermap {
   width: 100%;
   z-index: 100;
-  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: scroll;
   position: absolute;
   bottom: 0px;
   background-color: #F5F5F5;
