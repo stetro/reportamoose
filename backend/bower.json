@@ -9,9 +9,12 @@
     "angular-resource": "~1.0.7",
     "bootstrap-css": "~3.0.0",
     "datejs": "*",
-    "leaflet": "~0.7.1"
+    "leaflet": "~0.7.1",
+    "angular-leaflet": "~0.6.2",
+    "angular-route": "~1.2.5"
   },
   "resolutions": {
-    "angular": "1.2.2"
+    "angular": "1.2.2",
+    "angular-route": "1.2.2"
   }
 }
