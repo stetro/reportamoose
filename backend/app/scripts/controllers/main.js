@@ -17,6 +17,7 @@ angular.module('backendApp').controller('MainCtrl', function($scope, $rootScope)
 		possibleStatus: ['open', 'in process', 'closed'],
 		selectedGroup: false,
 		selectedSubgroup: false,
+		selectedStatus: false,
 		selectedRequest: false
 	});
 
@@ -31,6 +32,11 @@ angular.module('backendApp').controller('MainCtrl', function($scope, $rootScope)
 		$rootScope.requestMarkers = $scope.generateRequestMarkersOutOf($rootScope.allRequests);
 		$scope.addRequestMarkers();
 	};
+	$scope.setSelectedStatus = function(status) {
+		$scope.selectedStatus = status;
+		$rootScope.requestMarkers = $scope.generateRequestMarkersOutOf($rootScope.allRequests);
+		$scope.addRequestMarkers();
+	};
 	$scope.selectRequest = function(request) {
 		$scope.selectedRequest = request;
 		$scope.center = {
@@ -40,13 +46,14 @@ angular.module('backendApp').controller('MainCtrl', function($scope, $rootScope)
 		};
 	};
 	$scope.filterByGroups = function(request) {
+		var statusFilter = request.status == $scope.selectedStatus || $scope.selectedStatus == false;
 		if ($scope.selectedGroup) {
 			if ($scope.selectedSubgroup) {
-				return request.service.service_name == $scope.selectedSubgroup;
+				return request.service.service_name == $scope.selectedSubgroup && statusFilter;
 			}
-			return request.service.group == $scope.selectedGroup;
+			return request.service.group == $scope.selectedGroup && statusFilter;
 		}
-		return true;
+		return statusFilter;
 	};
 
 	$rootScope.allServices = $rootScope.Service.query(function() {
@@ -65,7 +72,7 @@ angular.module('backendApp').controller('MainCtrl', function($scope, $rootScope)
 	});
 
 	$scope.addRequestMarkers = function() {
-		$scope.markers = [];
+		$scope.markers = {};
 		for (var i = $rootScope.requestMarkers.length - 1; i >= 0; i--) {
 			$scope.markers[i + "marker"] = {
 				lat: $rootScope.requestMarkers[i].lat,

@@ -10,12 +10,13 @@
 			
 			<div class="btn-toolbar" role="toolbar">
 				<div class="btn-group">
-					<button type="button" class="btn btn-default active">all</button>
-					<button type="button" class="btn btn-default">
+					<button type="button" class="btn btn-default" ng-click="setSelectedStatus(false)" ng-class="{true:'active'}[selectedStatus == false]">
+						all</button>
+					<button type="button" class="btn btn-default"  ng-click="setSelectedStatus('open')" ng-class="{true:'active'}[selectedStatus == 'open']">
 						<i class="glyphicon glyphicon-unchecked"></i> open </button>
-					<button type="button" class="btn btn-default">
+					<button type="button" class="btn btn-default"  ng-click="setSelectedStatus('in process')" ng-class="{true:'active'}[selectedStatus == 'in process']">
 						<i class="glyphicon glyphicon-forward"></i> in process</button>
-					<button type="button" class="btn btn-default">
+					<button type="button" class="btn btn-default"  ng-click="setSelectedStatus('closed')" ng-class="{true:'active'}[selectedStatus == 'closed']">
 						<i class="glyphicon glyphicon-check"></i> closed</button>
 				</div>
 				<div class="btn-group">
@@ -79,26 +80,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <h4>Filter Requests</h4>
-			<form role="form">
-				<div class="form-group">
-					<label for="possibleStatus" class="control-label">Service:</label>
-					<select ng-model="filterService" ng-options="service.service_name  group by service.description for service in allServices" id="possibleServices" class="form-control">
-						<option value="">Every Service </option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="possibleStatus" class="control-label">Status:</label>
-					<select ng-model="filterStatus" ng-options="status for status in possibleStatus" id="possibleStatus" class="form-control">
-						<option value="">Every Status </option>
-					</select>
-				</div>
-				<div class="form-group">
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> Check me out
-						</label>
-					</div>
-				</div>
-			</form> -->
