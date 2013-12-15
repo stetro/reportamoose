@@ -1,15 +1,86 @@
-<ul class="nav nav-pills" id="header">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#/services">Services</a></li>
-</ul>
 
 <leaflet center="center" markers="markers" defaults="defaults" control="control" event-broadcast="events"></leaflet>
 
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-2">
-			<h4>Filter Requests</h4>
+		<div class="col-md-6">&nbsp;</div>
+		<div class="col-md-6" id="controllpanel">
+			<h4>Collaborative Civic Issue Tracker</h4>
+			
+			<div class="btn-toolbar" role="toolbar">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default active">all</button>
+					<button type="button" class="btn btn-default">
+						<i class="glyphicon glyphicon-unchecked"></i> open </button>
+					<button type="button" class="btn btn-default">
+						<i class="glyphicon glyphicon-forward"></i> in process</button>
+					<button type="button" class="btn btn-default">
+						<i class="glyphicon glyphicon-check"></i> closed</button>
+				</div>
+				<div class="btn-group">
+
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							Group 
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a ng-click="setSelectedGroup(false)" >every Group</a></li>
+							<li><a ng-click="setSelectedGroup(group)"  ng-repeat="group in groups">{{group}}</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" ng-disabled="!selectedGroup">
+							Subgroup
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a ng-click="setSelectedSubgroup(false)" >every Subgroup</a></li>
+							<li><a ng-click="setSelectedSubgroup(service.service_name)"  ng-repeat="service in allServices | filter : {group : selectedGroup}">
+								{{service.service_name}}
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<h5 ng-show="selectedGroup">
+				Filter by <code>{{selectedGroup}}</code> issues
+				<span ng-show="selectedSubgroup">specially <code>{{selectedSubgroup}}</code></span>
+			</h5>
+			<hr ng-show="selectedGroup">
+			<table class="table table-striped table-hover">
+				<tr>
+					
+					<th>&nbsp;</th>
+					<th>group</th>
+					<th>subgroup</th>
+					<th>date</th>
+				</tr>
+				<tr ng-repeat="request in allRequests | filter:filterByGroups" ng-click="selectRequest(request)">
+					<td>
+						<i class="glyphicon " ng-class="{'open':'glyphicon-unchecked', 'in process':'glyphicon-forward', 'closed':'glyphicon-check'}[request.status]"></i>
+					</td>
+					<td>
+						<img src="images/svgs/{{request.service.group}}_report.svg" alt="" width="14">
+						<code>{{request.service.group}}</code>
+					</td>
+					<td>
+						<code>
+							{{request.service.service_name}}
+						</code>
+					</td>
+					<td>
+						{{request.timestamp | timestampToDate}}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- <h4>Filter Requests</h4>
 			<form role="form">
 				<div class="form-group">
 					<label for="possibleStatus" class="control-label">Service:</label>
@@ -23,14 +94,11 @@
 						<option value="">Every Status </option>
 					</select>
 				</div>
-				<!-- <div class="form-group">
+				<div class="form-group">
 					<div class="checkbox">
 						<label>
 							<input type="checkbox"> Check me out
 						</label>
 					</div>
-				</div> -->
-			</form>
-		</div>
-	</div>
-</div>
+				</div>
+			</form> -->

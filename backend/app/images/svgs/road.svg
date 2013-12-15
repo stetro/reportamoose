@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="841.89px" height="1190.551px" viewBox="0 0 841.89 1190.551" enable-background="new 0 0 841.89 1190.551"
+	 xml:space="preserve">
+<g id="Layer_x0020_1">
+	<path fill="#58A0DA" stroke="#4D4D4D" stroke-width="30" d="M420.936,1126.451C322.309,758.914,27.467,575.162,27.467,391.395
+		c0-183.752,98.626-367.52,393.469-367.52c294.859,0,393.486,183.768,393.486,367.52
+		C814.422,575.162,519.562,758.914,420.936,1126.451z"/>
+	<path fill="#FFFFFF" d="M209.144,713.24C350.35,501.447,535.138,317.68,764.582,196.215c-10.373-15.576-43.6-66.436-67.474-82.012
+		c-11.428-7.279-20.763-18.688-32.19-24.912c-13.502-7.277-20.763-12.465-24.911-14.539c-1.037-1.037,0-1.037-2.075-1.037
+		C408.489,157.803,187.344,247.094,35.783,445.383l24.912,60.213L131.28,609.41l77.864,102.793V713.24z"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="44.837" y="29.819" width="556.361" height="264.057">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="44.837" y="29.819" width="556.361" height="264.057" id="id0">
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="5220.0288" y1="4664.5" x2="9057.0537" y2="-1840.4277" gradientTransform="matrix(0.0283 0 0 -0.0283 120.1867 202.3746)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		</linearGradient>
+		<rect x="33.691" y="19.725" fill="url(#SVGID_1_)" filter="url(#Adobe_OpacityMaskFilter)" width="577.237" height="284.471"/>
+	</mask>
+	<path mask="url(#id0)" fill="#FFFFFF" d="M202.92,74.752c-30.098,19.725-64.362,41.525-86.162,69.549
+		c-14.54,18.688-31.153,37.375-41.525,55.027c-13.502,23.873-18.688,46.729-23.893,63.324c-7.261,21.816-10.372,32.189,1.037,31.152
+		c52.953-8.297,74.752-86.162,174.416-146.375c35.302-20.762,101.756-53.99,169.229-60.23
+		c111.092-11.41,224.257,9.354,202.457-26.986c-8.315-14.539-40.506-18.688-80.993-23.875c-94.46-13.5-243.964-8.314-314.567,37.377
+		V74.752z"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="31.562" y="431.831" width="771.433" height="694.62">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="31.562" y="431.831" width="771.433" height="694.62" id="id2">
+		
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="10668.2305" y1="-32811.6562" x2="10296.0967" y2="-7942.1963" gradientTransform="matrix(0.0283 0 0 -0.0283 120.1867 202.3746)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.2196" style="stop-color:#FFFFFF;stop-opacity:0.502"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		</linearGradient>
+		
+			<rect x="21.244" y="422.547" fill="url(#SVGID_2_)" filter="url(#Adobe_OpacityMaskFilter_1_)" width="792.141" height="714.277"/>
+	</mask>
+	<path mask="url(#id2)" fill="#2D70BF" d="M396.024,1046.477l24.912,79.975l21.8-70.604l31.152-91.365l38.413-62.287
+		l109.017-167.156L725.13,596.963l64.362-107.98l13.502-53.988c-62.288,8.314-98.626,97.588-137.04,145.355
+		c-36.339,44.637-63.324,83.049-109.017,151.578c-29.06,42.562-134.965,272.006-138.077,275.117
+		c0-6.225-21.799-19.727-26.985-48.805c-3.112-1.037-30.115-58.139-30.115-58.139c-1.038,0-250.206-445.383-329.106-468.221
+		c-7.261-2.074,23.892,61.252,28.041,73.715l75.789,116.277l129.762,178.566l56.063,89.291l41.525,79.938L396.024,1046.477z"/>
+	<polygon fill="#58A0DA" points="76.271,531.545 180.083,419.436 239.259,466.146 129.206,608.371 	"/>
+	<polygon fill="#58A0DA" points="328.55,393.469 466.627,269.93 431.326,233.592 280.785,343.646 	"/>
+	<polygon fill="#58A0DA" points="530.99,187.918 555.901,222.164 693.978,139.113 668.029,109.018 	"/>
+</g>
+</svg>

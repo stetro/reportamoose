@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="841.89px" height="1190.551px" viewBox="0 0 841.89 1190.551" enable-background="new 0 0 841.89 1190.551"
+	 xml:space="preserve">
+<g id="Layer_x0020_1">
+	<path fill="#58A0DA" stroke="#4D4D4D" stroke-width="30" d="M421.431,1132.584C322.273,763.063,25.839,578.321,25.839,393.561
+		c0-184.743,99.159-369.503,395.592-369.503c296.452,0,395.609,184.76,395.609,369.503
+		C817.041,578.321,520.59,763.063,421.431,1132.584z"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="43.303" y="30.035" width="559.364" height="265.482">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="43.303" y="30.035" width="559.364" height="265.482" id="id0">
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="5208.4224" y1="4649.1777" x2="9066.1387" y2="-1890.8295" gradientTransform="matrix(0.0283 0 0 -0.0283 120.1867 202.3746)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		</linearGradient>
+		<rect x="32.097" y="19.887" fill="url(#SVGID_1_)" filter="url(#Adobe_OpacityMaskFilter)" width="580.352" height="286.005"/>
+	</mask>
+	<path mask="url(#id0)" fill="#FFFFFF" d="M202.239,75.21c-30.26,19.831-64.709,41.748-86.627,69.922
+		c-14.618,18.79-31.321,37.579-41.749,55.324c-13.574,24.003-18.789,46.982-24.021,63.667c-7.3,21.935-10.429,32.363,1.042,31.322
+		c53.238-8.344,75.155-86.628,175.357-147.166c35.492-20.874,102.305-54.282,170.143-60.556
+		c111.69-11.471,225.468,9.403,203.55-27.133c-8.36-14.617-40.725-18.788-81.431-24.002
+		c-94.969-13.575-245.281-8.361-316.265,37.577V75.21z"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="29.955" y="434.217" width="775.597" height="698.367">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="29.955" y="434.217" width="775.597" height="698.367" id="id2">
+		
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="10686.0176" y1="-33029.1641" x2="10311.876" y2="-8025.5312" gradientTransform="matrix(0.0283 0 0 -0.0283 120.1867 202.3746)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.2196" style="stop-color:#FFFFFF;stop-opacity:0.502"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		</linearGradient>
+		
+			<rect x="19.582" y="424.882" fill="url(#SVGID_2_)" filter="url(#Adobe_OpacityMaskFilter_1_)" width="796.417" height="718.131"/>
+	</mask>
+	<path mask="url(#id2)" fill="#2D70BF" d="M396.385,1052.18l25.046,80.404l21.917-70.983l31.321-91.859l38.621-62.622
+		l109.604-168.058l104.373-138.823l64.709-108.561l13.575-54.282c-62.623,8.361-99.158,98.117-137.78,146.14
+		c-36.534,44.877-63.666,83.499-109.604,152.397c-29.217,42.792-135.693,273.473-138.821,276.603
+		c0-6.258-21.917-19.833-27.132-49.066c-3.128-1.043-30.278-58.453-30.278-58.453c-1.042,0-251.556-447.787-330.883-470.748
+		c-7.299-2.086,24.021,61.581,28.192,74.113l76.199,116.905l130.462,179.528l56.367,89.772l41.749,80.371L396.385,1052.18z"/>
+	<polygon fill="#FFFFFF" points="531.037,168.111 532.08,705.653 523.737,716.102 503.905,716.102 503.905,724.442 321.23,723.399 
+		321.23,717.143 299.313,718.186 288.884,704.612 288.884,169.154 	"/>
+	<rect x="394.3" y="723.399" fill="#FFFFFF" width="35.492" height="100.201"/>
+	<path fill="#58A0DA" d="M412.046,205.69c38.045,0,68.88,30.834,68.88,68.879c0,38.045-30.835,68.899-68.88,68.899
+		c-38.046,0-68.899-30.854-68.899-68.899C343.147,236.524,374,205.69,412.046,205.69z"/>
+	<path fill="#58A0DA" d="M411.003,528.211c38.045,0,68.88,30.854,68.88,68.899s-30.835,68.881-68.88,68.881
+		c-38.045,0-68.899-30.836-68.899-68.881S372.958,528.211,411.003,528.211z"/>
+	<path fill="#58A0DA" d="M411.003,365.386c38.045,0,68.88,30.836,68.88,68.881c0,38.045-30.835,68.899-68.88,68.899
+		c-38.045,0-68.899-30.854-68.899-68.899C342.104,396.222,372.958,365.386,411.003,365.386z"/>
+</g>
+</svg>

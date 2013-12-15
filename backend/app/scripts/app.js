@@ -31,4 +31,25 @@ backendApp.run(function($rootScope, $resource, $http) {
 			method: 'PUT'
 		}
 	});
+
 });
+
+backendApp.filter('timestampToDate', function() {
+	return function(timestamp) {
+		if (timestamp === undefined) return;
+		return convertDate(timestamp).toString("dd.MM.yyyy");
+	};
+});
+
+backendApp.filter('timestampToTime', function() {
+	return function(timestamp) {
+		if (timestamp === undefined) return;
+		return convertDate(timestamp).toString("HH:mm");
+	};
+});
+
+function convertDate(timestamp) {
+	var string = timestamp.substr(0, timestamp.length - 5) + 'Z';
+	var time = Date.parse(string);
+	return time;
+}
