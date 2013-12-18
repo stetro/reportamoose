@@ -168,26 +168,146 @@ var items = [{
     "keywords": "some keywords",
     "group": "gravelroad",
     "metadata": true
-},, {
+}, {
     "service_name": "Kelirikko tai rakenteen korjaustarve",
     "description": "Soratien vaurio",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "gravelroad",
     "metadata": true
-},, {
+}, {
     "service_name": "Puute urakoitsijan toiminnassa",
     "description": "Soratien vaurio",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "gravelroad",
     "metadata": true
-},, {
+}, {
     "service_name": "Muu",
     "description": "Soratien vaurio",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "gravelroad",
+    "metadata": true
+}
+
+
+, {
+    "service_name": "Huonokuntoinen asfaltti",
+    "description": "Asfalttitien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "road",
+    "metadata": true
+}, {
+    "service_name": "Vahingoittunut tien rakenne",
+    "description": "Asfalttitien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "road",
+    "metadata": true
+}, {
+    "service_name": "Vahingoittunut tien merkintä",
+    "description": "Asfalttitien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "road",
+    "metadata": true
+}, {
+    "service_name": "Puute urakoitsijan toiminnassa",
+    "description": "Asfalttitien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "road",
+    "metadata": true
+}, {
+    "service_name": "Muu",
+    "description": "Asfalttitien vaurio",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "road",
+    "metadata": true
+}
+
+
+
+, {
+    "service_name": "Sillan puute tai vika",
+    "description": "Sillan, lautan tai laiturin puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "waves",
+    "metadata": true
+}, {
+    "service_name": "Lautan puute",
+    "description": "Sillan, lautan tai laiturin puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "waves",
+    "metadata": true
+}, {
+    "service_name": "Laiturin puute tai vika",
+    "description": "Sillan, lautan tai laiturin puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "waves",
+    "metadata": true
+}, {
+    "service_name": "Muu",
+    "description": "Sillan, lautan tai laiturin puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "waves",
+    "metadata": true
+}
+
+
+, {
+    "service_name": "Pysäkin toimimattomuus",
+    "description": "Julkisen liikenteen toiminnan puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "bus",
+    "metadata": true
+}, {
+    "service_name": "Muu",
+    "description": "Julkisen liikenteen toiminnan puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "bus",
+    "metadata": true
+}
+
+, {
+    "service_name": "Puute tai vika tienkäyttäjän palveluissa",
+    "description": "Puute tai vika tienkäyttäjän palveluissa",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "wc",
+    "metadata": true
+}
+, {
+    "service_name": "Muu",
+    "description": "Puute tai vika tienkäyttäjän palveluissa",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "wc",
+    "metadata": true
+}
+
+, {
+    "service_name": "Tienkäyttäjän huono käytös",
+    "description": "Muu liikenteen puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "dots",
+    "metadata": true
+}, {
+    "service_name": "Muu",
+    "description": "Muu liikenteen puute tai vika",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "dots",
     "metadata": true
 }
 ];
