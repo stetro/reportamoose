@@ -1,7 +1,6 @@
 var request = require('request');
 
-var service_url = 'http://localhost:3000/';
-
+var service_url ='http://stetro.ursa.uberspace.de/';
 var items = [{
     "service_name": "Onnettomuus",
     "description": "Tiedota akuutista ongelmasta tiellä, hätätilanteessa soita aina ensin 112.",
