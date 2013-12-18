@@ -20,7 +20,7 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 				logic: 'emit'
 			},
 			marker: {
-				enable: ['click', 'dragend'],
+				enable: ['click'],
 				logic: 'emit'
 			}
 		},

@@ -1,0 +1,56 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">
+                <img src="images/svgs/{{request.service.group}}_report.svg" alt="" width="30">
+                {{request.service.service_name}}
+                <small>{{request.timestamp | timestampToDate}} - {{request.timestamp | timestampToTime}}</small>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <ol class="breadcrumb">
+                <li><i class="glyphicon glyphicon-unchecked"></i> open</li>
+                <li class="active"><i class="glyphicon glyphicon-forward"></i> in process</li>
+                <li class="active"><i class="glyphicon glyphicon-check"></i> closed</li>
+                <li class="pull-right"><b>12 votes</b></li>
+            </ol>
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="{{request.media_url}}" width="200">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{request.service.service_name}}</h4>
+                        <p>{{request.service.description}}</p>
+                        <p>{{request.description}}</p>
+                    </div>
+                </li>
+            </ul>
+            <hr>
+            <dl class="dl-horizontal">
+                <dt>12.12.13 - 17:30</dt>
+                <dd>Hello me again, its still anoying!</dd>
+            </dl>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Give a comment ...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Send</button>
+                </span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="btn-group text-left">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Change Status 
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a ng-click="" ng-repeat="status in possibleStatus">{{status}}</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="cancel()">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</div>

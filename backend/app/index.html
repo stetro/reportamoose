@@ -12,7 +12,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
@@ -20,18 +21,17 @@
 <body ng-app="backendApp">
     <div ng-view=""></div>
     
-
+    <!-- build:js scripts/modules.js -->
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
 
-    <script src="bower_components/bootstrap-css/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-leaflet/examples/leaflet/leaflet.js"></script>
     <script type="text/javascript" src="bower_components/angular-leaflet/dist/angular-leaflet-directive.js"></script>
+    
     <script src="bower_components/datejs/build/date-fi-FI.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <!-- build:js scripts/modules.js -->
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
-    
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->

@@ -1,10 +1,11 @@
 
 <leaflet center="center" markers="markers" defaults="defaults" control="control" event-broadcast="events"></leaflet>
 
-
 <div class="container">
 	<div class="row">
-		<div class="col-md-6">&nbsp;</div>
+		<div class="col-md-6">
+			&nbsp;
+		</div>
 		<div class="col-md-6" id="controllpanel">
 			<h4>Collaborative Civic Issue Tracker</h4>
 			
@@ -20,7 +21,6 @@
 						<i class="glyphicon glyphicon-check"></i> closed</button>
 				</div>
 				<div class="btn-group">
-
 					<div class="btn-group">
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 							Group 
@@ -45,35 +45,43 @@
 					</div>
 				</div>
 			</div>
-			<hr>
+			<hr ng-show="selectedGroup">
 			<h5 ng-show="selectedGroup">
 				Filter by <code>{{selectedGroup}}</code> issues
 				<span ng-show="selectedSubgroup">specially <code>{{selectedSubgroup}}</code></span>
 			</h5>
-			<hr ng-show="selectedGroup">
-			<table class="table table-striped table-hover">
+			<div class="tooltip">
+				<div class="tooltip-inner">
+					Tooltip!
+				</div>
+				<div class="tooltip-arrow"></div>
+			</div>
+			<table class="table table-hover" id="requesttable">
 				<tr>
-					
 					<th>&nbsp;</th>
 					<th>group</th>
 					<th>subgroup</th>
 					<th>date</th>
 				</tr>
-				<tr ng-repeat="request in allRequests | filter:filterByGroups" ng-click="selectRequest(request)">
-					<td>
-						<i class="glyphicon " ng-class="{'open':'glyphicon-unchecked', 'in process':'glyphicon-forward', 'closed':'glyphicon-check'}[request.status]"></i>
+				<tr ng-repeat="request in allRequests | filter:filterByGroups" 
+					popover-placement="left" popover="{{request.timestamp | timestampToTime}} - Description: {{request.description}}" popover-text="{{request.description}}" popover-title="{{request.service.service_name}}"  popover-trigger="mouseenter">
+					<td ng-click="focusRequest(request)">
+						<i class="glyphicon glyphicon-record"></i>
 					</td>
-					<td>
+					<td ng-click="selectRequest(request)">
 						<img src="images/svgs/{{request.service.group}}_report.svg" alt="" width="14">
 						<code>{{request.service.group}}</code>
 					</td>
-					<td>
+					<td ng-click="selectRequest(request)">
 						<code>
 							{{request.service.service_name}}
 						</code>
 					</td>
-					<td>
+					<td ng-click="selectRequest(request)">
 						{{request.timestamp | timestampToDate}}
+					</td>
+					<td ng-click="selectRequest(request)">
+						<i class="glyphicon " ng-class="{'open':'glyphicon-unchecked', 'in process':'glyphicon-forward', 'closed':'glyphicon-check'}[request.status]"></i>
 					</td>
 				</tr>
 			</table>

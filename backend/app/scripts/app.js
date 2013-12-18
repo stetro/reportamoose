@@ -1,6 +1,6 @@
 'use strict';
 
-var backendApp = angular.module('backendApp', ['leaflet-directive','ngRoute', 'ngResource']);
+var backendApp = angular.module('backendApp', ['leaflet-directive','ngRoute', 'ngResource','ui.bootstrap']);
 backendApp.config(function($routeProvider) {
 	$routeProvider
 		.when('/', {
