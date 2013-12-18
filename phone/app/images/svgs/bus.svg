@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="841.89px" height="1190.551px" viewBox="0 0 841.89 1190.551" enable-background="new 0 0 841.89 1190.551"
+	 xml:space="preserve">
+<g id="Layer_x0020_1">
+	<path fill="#58A0DA" stroke="#4D4D4D" stroke-width="30" d="M422.839,1131.691C323.619,761.94,27,577.082,27,392.206
+		c0-184.857,99.22-369.733,395.839-369.733c296.637,0,395.858,184.876,395.858,369.733
+		C818.698,577.082,522.059,761.94,422.839,1131.691z"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="44.476" y="27.41" width="559.713" height="265.648">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="44.476" y="27.41" width="559.713" height="265.648" id="id0">
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="5251.1235" y1="4747.6133" x2="9112.7344" y2="-1800.1943" gradientTransform="matrix(0.0283 0 0 -0.0283 120.1867 202.3746)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		</linearGradient>
+		<rect x="33.261" y="17.255" fill="url(#SVGID_1_)" filter="url(#Adobe_OpacityMaskFilter)" width="580.716" height="286.182"/>
+	</mask>
+	<path mask="url(#id0)" fill="#FFFFFF" d="M203.511,72.615c-30.28,19.844-64.75,41.776-86.681,69.967
+		c-14.627,18.801-31.341,37.601-41.776,55.356c-13.583,24.019-18.8,47.013-24.035,63.707c-7.305,21.951-10.435,32.385,1.043,31.342
+		c53.271-8.347,75.202-86.681,175.467-147.257c35.514-20.888,102.369-54.313,170.249-60.594
+		c111.759-11.477,225.608,9.411,203.677-27.148c-8.366-14.627-40.75-18.801-81.481-24.018
+		c-95.028-13.584-246.478-8.367-316.462,37.602V72.615z"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="32.162" y="430.801" width="776.083" height="699.848">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="32.162" y="430.801" width="776.083" height="699.848" id="id2">
+		
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="10735.7656" y1="-32968.0469" x2="10361.3936" y2="-7937.8306" gradientTransform="matrix(0.0283 0 0 -0.0283 120.1867 202.3746)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.2196" style="stop-color:#FFFFFF;stop-opacity:0.502"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		</linearGradient>
+		<rect x="20.74" y="422.503" fill="url(#SVGID_2_)" filter="url(#Adobe_OpacityMaskFilter_1_)" width="796.912" height="718.583"/>
+	</mask>
+	<path mask="url(#id2)" fill="#2D70BF" d="M397.778,1050.193l25.062,80.456l21.931-71.027l31.341-91.919l38.645-62.66
+		l109.673-168.162L728.867,597.97l65.793-108.63l13.585-54.315c-62.663,7.323-99.222,98.179-137.867,146.231
+		c-36.557,44.906-63.704,83.551-109.673,152.496c-29.236,42.814-135.76,273.641-138.908,276.771
+		c0-6.261-21.932-19.845-27.148-49.097c-3.13-1.043-30.297-58.489-30.297-58.489c-1.045,0-251.713-448.067-331.09-472.086
+		c-7.304-2.087,24.037,62.663,28.21,74.161l76.246,116.976L268.261,801.63l56.401,89.829l41.775,80.421l32.384,77.271
+		L397.778,1050.193z"/>
+	<g id="_223733024">
+		<polygon fill="#FFFFFF" points="126.22,463.235 123.09,364.014 154.432,262.708 697.528,262.708 701.719,464.278 603.541,464.278 
+			601.455,445.478 586.828,426.677 563.854,415.18 548.182,414.137 525.208,417.27 510.582,426.677 501.172,437.131 
+			495.955,448.608 494.912,464.278 313.184,463.235 311.097,445.478 302.731,430.851 286.017,415.18 272.451,411.006 246.33,412.05 
+			226.486,419.374 209.771,435.024 203.511,453.825 202.467,464.278 		"/>
+		<polygon fill="#58A0DA" points="227.529,285.683 226.486,371.317 153.387,372.363 152.344,333.719 173.231,285.683 		"/>
+		<rect x="242.155" y="289.856" fill="#58A0DA" width="86.699" height="66.837"/>
+		<rect x="542.965" y="289.856" fill="#58A0DA" width="86.681" height="66.837"/>
+		<rect x="441.64" y="288.812" fill="#58A0DA" width="86.698" height="66.837"/>
+		<rect x="339.288" y="289.856" fill="#58A0DA" width="86.7" height="66.837"/>
+		<path fill="#FFFFFF" d="M257.826,423.547c22.488,0,40.731,18.224,40.731,40.731c0,22.489-18.243,40.733-40.731,40.733
+			c-22.507,0-40.732-18.244-40.732-40.733C217.094,441.771,235.319,423.547,257.826,423.547z"/>
+		<path fill="#FFFFFF" d="M548.182,426.677c22.489,0,40.733,18.244,40.733,40.732c0,22.506-18.244,40.732-40.733,40.732
+			c-22.507,0-40.731-18.227-40.731-40.732C507.451,444.921,525.675,426.677,548.182,426.677z"/>
+	</g>
+	<rect x="700.674" y="433.981" fill="#FFFFFF" width="16.698" height="15.67"/>
+</g>
+</svg>
