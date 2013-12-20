@@ -98,15 +98,27 @@
 			<div class="time">12.04.2014</div>
 			<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
 		</div>
-		<form ng-submit="addNewComment()">
+		<!-- <form ng-submit="addNewComment()">
 			<input type="text" class="topcoat-text-input" placeholder="Comment ..." ng-model="commentText">	
-		</form>
+		</form> -->
+		<div class="topcoat-button-bar">
+			<div class="topcoat-button-bar__item">
+				<button class="topcoat-button-bar__button">
+					Näitkö ? 
+					<i class="icon-chevron-sign-up"></i>
+					0
+				</button>
+			</div>
+			<div class="topcoat-button-bar__item">
+				<button class="topcoat-button-bar__button" >
+					Kommentoi
+					
+				</button>
+			</div>
+		</div>
 	</div>
 		<div id="requestDetailNavigation">
-		<button class="topcoat-button" id="voteDetailButton">
-			<i class="icon-chevron-sign-up"></i>
-			0
-		</button>
+		
 		<button class="topcoat-button--cta" ng-click="showRequestDetail = false" id="hideRequestDetailButton">OK</button>	
 	</div>
 	
