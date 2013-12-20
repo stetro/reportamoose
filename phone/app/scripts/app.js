@@ -77,22 +77,6 @@ function convertDate(timestamp) {
 
 phoneApp.config(function($routeProvider, $compileProvider) {
 	$routeProvider
-		.when('/app', {
-			templateUrl: 'views/main.html',
-			controller: 'MainCtrl'
-		})
-		.when('/map', {
-			templateUrl: 'views/map.html',
-			controller: 'MapCtrl'
-		})
-		.when('/position', {
-			templateUrl: 'views/position.html',
-			controller: 'PositionCtrl'
-		})
-		.when('/picture', {
-			templateUrl: 'views/picture.html',
-			controller: 'PictureCtrl'
-		})
 		.when('/', {
 			templateUrl: 'views/app.html',
 			controller: 'AppCtrl'
@@ -101,17 +85,9 @@ phoneApp.config(function($routeProvider, $compileProvider) {
 			templateUrl: 'views/report.html',
 			controller: 'ReportCtrl'
 		})
-		.when('/detail', {
-			templateUrl: 'views/detail.html',
-			controller: 'DetailCtrl'
-		})
 		.when('/settings', {
 			templateUrl: 'views/settings.html',
 			controller: 'SettingsCtrl'
-		})
-		.when('/store', {
-			templateUrl: 'views/store.html',
-			controller: 'StoreCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'
