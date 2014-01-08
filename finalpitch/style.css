@@ -1,12 +1,58 @@
-#phone div{
+body{
+	background-repeat: no-repeat;
+	background-position: 80% -10%;
+}
+html{
+	background: radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));	
+}
+
+.step#backend{
+	width:1300px;
+}
+
+#phone iframe{
 	width:320px;
 	height:550px;
 	border:20px solid #000;
-	margin:31px auto;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+#open311{
+	background-color:#444;
+	-webkit-border-radius:  20px;
+	-moz-border-radius:  20px;
+	border-radius:  20px;
+	color:#FFF;
+}
+
+#open311 img#database{
+	float:right;
+	position:absolute;
+	top:-50px;
+	right:-50px;
+}
+#open311 img#backendarrow{
+	position:absolute;
+	top:50px;
+	right:350px;
+}
+#open311 img#phonearrow{
+	position:absolute;
+	top:-128px;
+	left:150px;
+}
+
+#title img{
+	position:absolute;
+	top:-300px;
+	right:0;
+}
+#title p{
+	color:#999;
+	font-size:0.5em;
 }

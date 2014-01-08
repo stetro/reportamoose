@@ -1,0 +1,16 @@
+{
+  "name": "finalpitch",
+  "version": "0.0.0",
+  "homepage": "https://github.com/stetro/reportamoose",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "impress.js": "~0.5.3"
+  }
+}
