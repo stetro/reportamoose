@@ -191,8 +191,8 @@ angular.module('phoneApp').controller('AppCtrl', function($scope, $http, $rootSc
 		var markers = [];
 		for (var r in requests) {
 			var newRequest = {};
-			newRequest.lat = requests[r].lat;
-			newRequest.lng = requests[r].lng;
+			newRequest.lat = parseFloat(requests[r].lat);
+			newRequest.lng = parseFloat(requests[r].lng);
 			newRequest.raw = requests[r];
 			newRequest.message = requests[r].description;
 			for (var s in $rootScope.allServices) {
