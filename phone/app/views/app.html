@@ -2,12 +2,12 @@
 	<ul class="topcoat-list__container navigation">
 		<li class="topcoat-list__item" ng-click="settings()">
 			<i class="icon-gear"></i>
-			&nbsp;Asetukset
+			&nbsp;Settings
 		</li>
 		<li class="topcoat-list__item" ng-show="draftAvailable()">
 			<span ng-click="reportDraft()">
 				<i class="icon-edit"></i>
-				&nbsp;Ilmoita viimeisin luonnos
+				&nbsp;Report latest Draft
 			</span>
 			<span ng-click="removeDraft()" id="removeDraft">
 				<i class="icon-remove"></i>
@@ -15,7 +15,7 @@
 		</li>
 		<li class="topcoat-list__item">
 			<form ng-submit="lookUp(address)">
-				<input type="text" ng-model="address" placeholder=" Etsi osoite ..." class="topcoat-search-input">
+				<input type="text" ng-model="address" placeholder=" Searching address ..." class="topcoat-search-input">
 			</form>
 		</li>
 		<li class="topcoat-list__item version">
@@ -30,13 +30,13 @@
 	<div id="reportButtonWrapper" >
 		<button class="topcoat-button--cta" id="reportButton" ng-click="reportNow()" ng-show="showReportButton">
 			<i class="icon-warning-sign"></i>
-			Ilmoittamiseen
+			Report
 		</button>
 	</div>
 	<div class="undermap"> 
 		<div>
 			<div id="markerHider" ng-show="showSearchPositionDialog">
-				Etsitään osoitetta ...
+			Searching location ...	
 			</div>
 			<ul>
 				<li ng-repeat="marker in issueMarkers"   >
@@ -59,12 +59,12 @@
 </div>
 
 <div id="thanksmessage" ng-show="showThankMessage">
-	<p>Ilmoittamasi vika tai puute on nyt lähetetty eteenpäin.<br/> Kiitos avustasi! </p>
+	<p>Your issue has been reported.<br/>Thank you! </p>
 	<button class="topcoat-button--cta" ng-click="showThankMessage = false">OK</button>
 </div>
 
 <div id="draftmessage" ng-show="showDraftMessage">
-	<p>Luonnoksesi on nyt tallennettu.</p>
+	<p>Your report is now saved as draft.</p>
 	<button class="topcoat-button--cta" ng-click="showDraftMessage = false">OK</button>
 </div>
 
@@ -104,14 +104,14 @@
 		<div class="topcoat-button-bar">
 			<div class="topcoat-button-bar__item">
 				<button class="topcoat-button-bar__button">
-					Näitkö ? 
+					Have you Seen ? 
 					<i class="icon-chevron-sign-up"></i>
 					0
 				</button>
 			</div>
 			<div class="topcoat-button-bar__item">
 				<button class="topcoat-button-bar__button" >
-					Kommentoi
+					Comment
 					
 				</button>
 			</div>

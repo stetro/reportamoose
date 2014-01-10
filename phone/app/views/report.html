@@ -3,7 +3,7 @@
 		<button class="topcoat-button" ng-click="back()" id="backbutton"><i class="icon-chevron-left"></i></button>
 	</div>
 	<div class="topcoat-navigation-bar__item center">
-		<h1 class="topcoat-navigation-bar__title">Ilmoita</h1>
+		<h1 class="topcoat-navigation-bar__title">Report</h1>
 	</div>
 </div>
 
@@ -14,30 +14,30 @@
 		<div id="reportCategory">
 			<img src="{{position.iconUrl}}" alt="" width="35">
 			<select class="topcoat-button" ng-model="selectedService" ng-options="item.service_name for item in serviceListOfSameGroup">
-				<option value="">tarkenna ...</option>
+				<option value="">specify ...</option>
 			</select>
 			
 		</div>
-		<input type="text" class="topcoat-text-input" ng-model="requestDescription" placeholder="Vian tai puutteen kuvaus ..." value=""> <br><br>
+		<input type="text" class="topcoat-text-input" ng-model="requestDescription" placeholder="Description ..." value=""> <br><br>
 		<div class="picture">
 			<button class="picture topcoat-button" ng-click="showPhotoInfo = true">
 				<i class="icon-picture"></i>
-				Ota kuva
+				Take Picture	
 			</button>
 			<img src="http://www.op-marburg.de/var/storage/images/op/lokales/wirtschaft/wirtschaft-lokal/schlagloecher-ziehen-vor-allem-stossdaempfer-in-mitleidenschaft/10969177-1-ger-DE/Schlagloecher-ziehen-vor-allem-Stossdaempfer-in-Mitleidenschaft_ArtikelQuer.jpg" alt="" height="50" ng-show="showPhotoInfo">
 		</div><br>
 		<label class="topcoat-checkbox">
 			<input type="checkbox">
 			<div class="topcoat-checkbox__checkmark"></div>
-			&nbsp;Haluan, että minuun otetaan yhteyttä
+			&nbsp;I want to be contacted!
 		</label><br><br>
 		<button class="topcoat-button--cta" ng-click="send()" id="sendReportButton" ng-disabled="!selectedService">
 			<i class="icon-share"></i>
-			Ilmoita 
+			Report 
 		</button>
 		<button class="topcoat-button" ng-click="save()" id="saveReportButton">
 			<i class="icon-draft"></i>
-			Tallenna luonnos
+		Save as draft	
 		</button>
 	</div>
 </section>
