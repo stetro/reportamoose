@@ -47,12 +47,12 @@ html{
 	left:150px;
 }
 
-#title img{
+#title img, #thanks img{
 	position:absolute;
 	top:-300px;
 	right:0;
 }
-#title p{
+#title p, #thanks p{
 	color:#999;
 	font-size:0.5em;
 }

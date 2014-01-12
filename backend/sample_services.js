@@ -18,7 +18,7 @@ var items = [{
 }, 
 {
     "service_name": "Other urgent danger",
-    "description": "Tiedota akuutista ongelmasta tiellä, hätätilanteessa soita aina ensin 112.",
+    "description": "Warning to other road users.",
     "type": "realtime",
     "keywords": "some keywords",
     "group": "danger",
@@ -154,6 +154,13 @@ var items = [{
 
 , {
     "service_name": "A need for maintenance",
+    "description": "Gravel road issue",
+    "type": "realtime",
+    "keywords": "some keywords",
+    "group": "gravelroad",
+    "metadata": true
+}, {
+    "service_name": "A HUGE ANNOYING POTHOLE",
     "description": "Gravel road issue",
     "type": "realtime",
     "keywords": "some keywords",
